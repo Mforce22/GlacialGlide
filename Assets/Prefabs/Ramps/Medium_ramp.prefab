@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5466089981024000927}
   - component: {fileID: 8083027097550551243}
   - component: {fileID: 660552846577160314}
+  - component: {fileID: 4290997188083119918}
   m_Layer: 0
   m_Name: Medium_ramp
   m_TagString: Untagged
@@ -81,6 +82,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.5396338, y: 1.9643848}
   m_EdgeRadius: 0
+--- !u!114 &4290997188083119918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2526101473465846196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d198fef9356d25458466d515f12dfaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6282752548416176579
 GameObject:
   m_ObjectHideFlags: 0
