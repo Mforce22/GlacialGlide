@@ -77,7 +77,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ReferenceResolution: {x: 1080, y: 1920}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -118,6 +118,7 @@ MonoBehaviour:
   _canvasGroup: {fileID: 2418879358136237852}
   _skipAnimation: 0
   _fadeDuration: 0.3
+  _fadeSteps: 100
 --- !u!1 &5785071180351806089
 GameObject:
   m_ObjectHideFlags: 0
