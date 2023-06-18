@@ -360,6 +360,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 243244941725900647, guid: 1d5e5e104d9f75e46a25196cb024d4fc, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 243244941725900647, guid: 1d5e5e104d9f75e46a25196cb024d4fc, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1920
+      objectReference: {fileID: 0}
     - target: {fileID: 3870132041929476629, guid: 1d5e5e104d9f75e46a25196cb024d4fc, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -477,3 +485,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _OptionsViewPrefab: {fileID: 66445236344238178, guid: 23878bc7134814a4da16850f2fb32a2d, type: 3}
+  _CreditsViewPrefab: {fileID: 0}
