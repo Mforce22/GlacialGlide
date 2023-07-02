@@ -10,7 +10,7 @@ public class GameMaster : Singleton<GameMaster>
 
     [SerializeField]
     [Tooltip("Starting velocity of the game")]
-    private int velocity;
+    public int velocity;
 
     [SerializeField]
     [Tooltip("Is the game paused?")]
