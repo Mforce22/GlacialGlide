@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5367954901417550219}
   - component: {fileID: 8215088568834169334}
+  - component: {fileID: 692162571}
+  - component: {fileID: 4543248741808874576}
   m_Layer: 0
   m_Name: Slope
   m_TagString: Untagged
@@ -84,3 +86,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &692162571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3180221348030391042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aeed9069051da845b9b30a04e969ba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4543248741808874576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3180221348030391042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 775ad808ad10a004895479278d207dab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slopeStart: {fileID: 0}
+  _slopeEnd: {fileID: 0}
