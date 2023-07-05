@@ -39,6 +39,9 @@ public class UI_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        _Points = GameMaster.Instance.getPoints();
+        _Hearts = GameMaster.Instance.getHearts();
+
         _PointsValue.SetText(_Points.ToString());
 
         switch (_Hearts) {
@@ -94,5 +97,11 @@ public class UI_Manager : MonoBehaviour
         Debug.Log("Options view instantiating");
         if (_optionsViewController) return;
         _optionsViewController = Instantiate(_OptionsViewPrefab);
+        GameMaster.Instance.setPause(true);
+    }
+
+    private void Start() {
+        _Points = GameMaster.Instance.getPoints();
+        _Hearts = GameMaster.Instance.getHearts();
     }
 }

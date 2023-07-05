@@ -10,8 +10,7 @@ public class Movement : MonoBehaviour
     void Start()
     {
         //get instance of GameMaster
-        GameMaster Gm = GameObject.Find("Master").GetComponent<GameMaster>();
-        _movement = Gm.Velocity;
+        _movement = GameMaster.Instance.getVelocity();
     }
 
     // Update is called once per frame

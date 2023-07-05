@@ -7,6 +7,7 @@ public class OptionsViewController : MonoBehaviour
 {
     public void CloseOption()
     {
+        GameMaster.Instance.setPause(false);
         Destroy(gameObject);
     }
 
