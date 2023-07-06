@@ -8,6 +8,10 @@ public class SpawnCollectibles : MonoBehaviour
     [Header("Spawn Settings")]
 
     [SerializeField]
+    [Tooltip("Seconds of spawn rate")]
+    private float SpawnRate;
+
+    [SerializeField]
     [Tooltip("Trees spawn rate")]
     private int Trees_SpawnRate;
     [SerializeField]
@@ -81,7 +85,7 @@ public class SpawnCollectibles : MonoBehaviour
             SpawnPoint.transform.position = new Vector3(Random.Range(-4.0f, 4.0f), SpawnPoint.transform.position.y, SpawnPoint.transform.position.z);
 
             //wait 0.6 seconds
-            yield return new WaitForSeconds(0.6f);
+            yield return new WaitForSeconds(SpawnRate);
             int randomValue = Random.Range(0, 100);
 
             //60 spawn rate trees

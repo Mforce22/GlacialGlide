@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9805d06706260d043a912fd5c8e8b799, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpawnRate: 0.6
   Trees_SpawnRate: 60
   Tree1Prefab: {fileID: 830712655934130759, guid: cca8c8c1fc87faa439cad7d700e2b4c3, type: 3}
   Tree2Prefab: {fileID: 830712655934130759, guid: 89b6650f8ca47634bb4ce8390b2ea256, type: 3}
