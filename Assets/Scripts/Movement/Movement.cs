@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
 
-    private int _movement = 0;
+    private int _movement;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +16,10 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //move up 
-        transform.Translate(Vector3.up * _movement * Time.deltaTime);
+        //if the game isn't in pause
+        if (!GameMaster.Instance.getPause()) {
+            //move up 
+            transform.Translate(Vector3.up * _movement * Time.deltaTime);
+        }
     }
 }
