@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6952015201064658878, guid: a78a5482947c10b46a9f4eee56dbb57f, type: 3}
+      propertyPath: orthographic size
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a78a5482947c10b46a9f4eee56dbb57f, type: 3}
 --- !u!1 &164039090
@@ -325,9 +329,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slopes
       objectReference: {fileID: 0}
-    - target: {fileID: 725268985725357299, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: X2_SpawnRate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: Coin_SpawnRate
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: Ramp_SpawnRate
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: Bombs_SpawnRate
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: Heart_SpawnRate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: Trees_SpawnRate
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: Shield_SpawnRate
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6158998028110037816, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6158998028110037816, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -12.09
       objectReference: {fileID: 0}
     - target: {fileID: 6912198812420696936, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
       propertyPath: m_RootOrder
