@@ -278,46 +278,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &845475540 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 786462335, guid: 47bb0e3b3fb78284f992203cd72dae3e, type: 3}
-  m_PrefabInstance: {fileID: 3141878690033266622}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &845475545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 845475540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
---- !u!114 &845475546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 845475540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
 --- !u!1001 &1716498799
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -328,42 +288,6 @@ PrefabInstance:
     - target: {fileID: 725268985725357299, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
       propertyPath: m_Name
       value: Slopes
-      objectReference: {fileID: 0}
-    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
-      propertyPath: X2_SpawnRate
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
-      propertyPath: Coin_SpawnRate
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
-      propertyPath: Ramp_SpawnRate
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
-      propertyPath: Bombs_SpawnRate
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
-      propertyPath: Heart_SpawnRate
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
-      propertyPath: Trees_SpawnRate
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
-      propertyPath: Shield_SpawnRate
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6158998028110037816, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6158998028110037816, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -12.09
       objectReference: {fileID: 0}
     - target: {fileID: 6912198812420696936, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
       propertyPath: m_RootOrder

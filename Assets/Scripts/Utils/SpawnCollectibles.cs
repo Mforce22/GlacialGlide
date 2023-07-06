@@ -109,9 +109,9 @@ public class SpawnCollectibles : MonoBehaviour
                 SpawnX2();
             }
             //2 spawn rate Heart
-            /*else if (randomValue < (Trees_SpawnRate + Coin_SpawnRate + Bombs_SpawnRate + Ramp_SpawnRate + Shield_SpawnRate + X2_SpawnRate + Heart_SpawnRate) && randomValue > (Trees_SpawnRate + Coin_SpawnRate + Bombs_SpawnRate + Ramp_SpawnRate + Shield_SpawnRate + X2_SpawnRate)) {
+            else if (randomValue < (Trees_SpawnRate + Coin_SpawnRate + Bombs_SpawnRate + Ramp_SpawnRate + Shield_SpawnRate + X2_SpawnRate + Heart_SpawnRate) && randomValue > (Trees_SpawnRate + Coin_SpawnRate + Bombs_SpawnRate + Ramp_SpawnRate + Shield_SpawnRate + X2_SpawnRate)) {
                 SpawnHeart();
-            }*/
+            }
         }
     }
 
