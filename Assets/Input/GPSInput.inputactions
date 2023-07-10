@@ -128,8 +128,19 @@
                 },
                 {
                     "name": "",
-                    "id": "c084e9f7-7373-46d7-93f3-a542d31a2b19",
+                    "id": "ab26345c-8af3-4f98-8518-232a833adf4d",
                     "path": "<Touchscreen>/primaryTouch/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "39991a69-3f87-475d-8f59-8dd9328728eb",
+                    "path": "<Touchscreen>/primaryTouch/radius",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
