@@ -51,26 +51,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnRate: 0.6
   Trees_SpawnRate: 60
-  Tree1Prefab: {fileID: 830712655934130759, guid: cca8c8c1fc87faa439cad7d700e2b4c3, type: 3}
-  Tree2Prefab: {fileID: 830712655934130759, guid: 89b6650f8ca47634bb4ce8390b2ea256, type: 3}
-  Tree3Prefab: {fileID: 830712655934130759, guid: 6e5a4d7f285d1a04a967bbc31e06f1a3, type: 3}
+  Tree1ManagerContainer: {fileID: 11400000, guid: 807516dfb25c6bb4a9d2061c1413bb37, type: 2}
+  Tree2ManagerContainer: {fileID: 11400000, guid: f220fc8a7c08d3543b9df600e87b59e8, type: 2}
+  Tree3ManagerContainer: {fileID: 11400000, guid: ce72b7b807e075e4bacafe29151b668d, type: 2}
   Bombs_SpawnRate: 6
-  BombPrefab: {fileID: 830712655934130759, guid: 34e44c65762bc1a4699b7019c8ae72da, type: 3}
+  BombManagerContainer: {fileID: 11400000, guid: b7c532e766bfe5a4c87e6180856b6b9c, type: 2}
   Coin_SpawnRate: 20
-  CoinPrefab: {fileID: 830712655934130759, guid: 48f6ffed6b277a149812310640950abc, type: 3}
+  CoinManagerContainer: {fileID: 11400000, guid: 491397e3985401640928064772565ece, type: 2}
   Shield_SpawnRate: 4
-  ShieldPrefab: {fileID: 830712655934130759, guid: 726e80e81c4020b43ab441132d60b280, type: 3}
+  ShieldManagerContainer: {fileID: 11400000, guid: ed17dd1b2c84077489ee754be39bf95d, type: 2}
   X2_SpawnRate: 2
-  X2Prefab: {fileID: 4549753684575246427, guid: 234c061bd53adb84785a9da445fdb42a, type: 3}
+  X2ManagerContainer: {fileID: 11400000, guid: b6d7fefd10a56b441a54ce87fb3a184e, type: 2}
   Heart_SpawnRate: 2
-  HeartPrefab: {fileID: 4875759156173773496, guid: 88408b2e75997f04d895ed2e0a0ba832, type: 3}
+  HeartManagerContainer: {fileID: 11400000, guid: 3bd3d1e5f5c4a774b877e0475e3c40eb, type: 2}
   Ramp_SpawnRate: 6
   SRamp_SpawnRate: 75
   MRamp_SpawnRate: 20
   LRamp_SpawnRate: 5
-  SRampPrefab: {fileID: 5233694179704958376, guid: a0b55237c879b764ca3b5b8ba810861f, type: 3}
-  MRampPrefab: {fileID: 2526101473465846196, guid: c83eefb0725fed548be8e34ce3a97ddb, type: 3}
-  LRampPrefab: {fileID: 8692916069304107394, guid: a55138f60fc9349439b42cb61537fe76, type: 3}
+  SRampManagerContainer: {fileID: 11400000, guid: 517919be0fa6981478357633814fbdae, type: 2}
+  MRampManagerContainer: {fileID: 11400000, guid: 6b7c5a91e3d08464988858f13b3f253b, type: 2}
+  LRampManagerContainer: {fileID: 11400000, guid: f70f7dd6580b6e54f95bbd6b9db687d9, type: 2}
   SpawnPoint: {fileID: 6449189179454832579}
 --- !u!1 &6449189179454832579
 GameObject:

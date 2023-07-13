@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slopeEnd: {fileID: 4783415839181879176, guid: aaa95719e694648448a253a5aad063d4, type: 3}
+  _idPoolManager: {fileID: 11400000, guid: b7c532e766bfe5a4c87e6180856b6b9c, type: 2}
 --- !u!1 &3827601123673021609
 GameObject:
   m_ObjectHideFlags: 0
