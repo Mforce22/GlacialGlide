@@ -693,6 +693,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8101689481348038818, guid: 0b3fd6a3d3628d84aad6e75a5347bb86, type: 3}
+      propertyPath: _Priority
+      value: 21
+      objectReference: {fileID: 0}
     - target: {fileID: 8101689481348038819, guid: 0b3fd6a3d3628d84aad6e75a5347bb86, type: 3}
       propertyPath: m_Name
       value: PoolSystem
