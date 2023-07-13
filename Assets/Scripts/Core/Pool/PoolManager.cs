@@ -16,16 +16,18 @@ public class PoolManager : MonoBehaviour {
     private Queue<PoolableObject> _poolQueue;
 
     public void Setup() {
+        if (this._poolQueue == null){
+            this._poolQueue = new Queue<PoolableObject>();
+        }
         StartCoroutine(AsyncInstantiate());
     }
 
-    private IEnumerator AsyncInstantiate() {
-        _poolQueue = new Queue<PoolableObject>();
+    private IEnumerator AsyncInstantiate() {  
         PoolableObject poolableObject;
         for (int i = 1; i <= _Quantity; ++i) {
             poolableObject = Instantiate(_PoolableObjectPrefab, gameObject.transform);
             poolableObject.gameObject.SetActive(false);
-            _poolQueue.Enqueue(poolableObject);
+            this._poolQueue.Enqueue(poolableObject);
             if(i % _ObjectsPerFrame == 0) {
                 yield return null;
             }
@@ -34,11 +36,11 @@ public class PoolManager : MonoBehaviour {
     }
 
     public T GetPoolableObject<T>() where T : PoolableObject {
-        if( _poolQueue.Count == 0) {
+        if(this._poolQueue.Count == 0) {
             Debug.LogError("QUEUE ENDED: " + gameObject.name);
             return null;
         }
-        T poolableObject = _poolQueue.Dequeue() as T;
+        T poolableObject = this._poolQueue.Dequeue() as T;
         poolableObject.gameObject.SetActive(true);
         poolableObject.Setup();
         return poolableObject;
@@ -47,6 +49,6 @@ public class PoolManager : MonoBehaviour {
     public void ReturnPoolableObject(PoolableObject poolableObject) {
         poolableObject.Clear();
         poolableObject.gameObject.SetActive(false);
-        _poolQueue.Enqueue(poolableObject);
+        this._poolQueue.Enqueue(poolableObject);
     }
 }
