@@ -15,4 +15,14 @@ MonoBehaviour:
   PoolManagerBindings:
   - SceneName: MainMenu
     poolManagersList:
-    - {fileID: 8070445538123262702, guid: 8c1cf2928ba548e48a9fffb627784776, type: 3}
+    - {fileID: 4370513190833882435, guid: aa92e4fabeccd9e4db4674e0d0354e7d, type: 3}
+    - {fileID: 7039896657806338461, guid: 8dba6a1db3024c9408c878d719d339f6, type: 3}
+    - {fileID: 3308196932463974640, guid: 906f483aaf935a14ba715b939e791c31, type: 3}
+    - {fileID: 7395413157859854392, guid: aed61c1a464adfc47a787b6e08fbfcbd, type: 3}
+    - {fileID: 7449931252279296202, guid: d7d25bd7b5278584486b651a859a1b2f, type: 3}
+    - {fileID: 4661876957301019520, guid: e2a32eb40da74ff47ba4ec50c700a7b6, type: 3}
+    - {fileID: 8860337184519949364, guid: 2ab126fe9af504848b0aeb70ad5de031, type: 3}
+    - {fileID: 2560146531153476215, guid: 3a4ef6a296ed7fb48b0bd9c2de5b87f6, type: 3}
+    - {fileID: 5195636882167580447, guid: a317c79c9139be343943374d8fa628da, type: 3}
+    - {fileID: 7445305361048806336, guid: 9adb8a06dcc2bb04cab10c2a1a1dea01, type: 3}
+    - {fileID: 7996801654122222211, guid: 3eb145732140320428dfffa9c789179f, type: 3}
