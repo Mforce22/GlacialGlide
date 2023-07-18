@@ -28,6 +28,10 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     [SerializeField]
     private GameEvent _CoinTakenEvent;
 
+    [Tooltip("Event listened when the player take damage")]
+    [SerializeField]
+    private GameEvent _DamageTakenEvent;
+
     #region variables
 
     [Header("Game Master Settings")]
@@ -97,6 +101,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         _ShieldHitEvent.Subscribe(ShieldHit);
         _HeartTakenEvent.Subscribe(HeartTaken);
         _CoinTakenEvent.Subscribe(CoinTaken);
+        _DamageTakenEvent.Subscribe(DamageTaken);
 
         SystemCoordinator.Instance.FinishSystemSetup(this);
     }
@@ -106,6 +111,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         _ShieldHitEvent.Unsubscribe(ShieldHit);
         _HeartTakenEvent.Unsubscribe(HeartTaken);
         _CoinTakenEvent.Unsubscribe(CoinTaken);
+        _DamageTakenEvent.Unsubscribe(DamageTaken);
     }
 
     //used for testing
@@ -114,6 +120,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         _ShieldHitEvent.Subscribe(ShieldHit);
         _HeartTakenEvent.Subscribe(HeartTaken);
         _CoinTakenEvent.Subscribe(CoinTaken);
+        _DamageTakenEvent.Subscribe(DamageTaken);
     }
 
 
@@ -142,6 +149,24 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     {
         Debug.Log("Coin taken");
         setPoints(points + 100);
+    }
+
+    void DamageTaken(GameEvent evt)
+    {
+        Debug.Log("Damage taken");
+        if (_hasShield)
+        {
+            _hasShield = false;
+        }
+        else
+        {
+            setHearts(hearts - 1);
+            if (hearts <= 0)
+            {
+                //game over
+                Debug.Log("Game Over");
+            }
+        }
     }
 
 

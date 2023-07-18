@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5557023727049923964}
   - component: {fileID: 7645353424107530391}
   - component: {fileID: 8228365893779262419}
+  - component: {fileID: 5065521589841282610}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: Untagged
@@ -122,6 +123,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slopeEnd: {fileID: 4783415839181879176, guid: aaa95719e694648448a253a5aad063d4, type: 3}
+  _idPoolManager: {fileID: 11400000, guid: b7c532e766bfe5a4c87e6180856b6b9c, type: 2}
+--- !u!114 &5065521589841282610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830712655934130759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb1981ff47f73e4caab0a5136c4165e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _EventToInvoke: {fileID: 11400000, guid: a766238b099f6d24b9303453367e6b3f, type: 2}
   _idPoolManager: {fileID: 11400000, guid: b7c532e766bfe5a4c87e6180856b6b9c, type: 2}
 --- !u!1 &3827601123673021609
 GameObject:

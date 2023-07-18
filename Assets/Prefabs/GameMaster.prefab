@@ -50,6 +50,7 @@ MonoBehaviour:
   _ShieldHitEvent: {fileID: 11400000, guid: 208ee963d0b2ac64d80be1453c70e3d6, type: 2}
   _HeartTakenEvent: {fileID: 11400000, guid: ced15e19e974abe47a2dd801318dfa2f, type: 2}
   _CoinTakenEvent: {fileID: 11400000, guid: c735f0900a4844b46b1b19f95a587b57, type: 2}
+  _DamageTakenEvent: {fileID: 11400000, guid: a766238b099f6d24b9303453367e6b3f, type: 2}
   velocity: 2
   isPaused: 0
   hearts: 3
