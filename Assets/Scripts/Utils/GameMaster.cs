@@ -32,6 +32,10 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     [SerializeField]
     private GameEvent _DamageTakenEvent;
 
+    [Tooltip("Event listened when the player take a X2")]
+    [SerializeField]
+    private GameEvent _X2TakenEvent;
+
     #region variables
 
     [Header("Game Master Settings")]
@@ -55,6 +59,9 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     [SerializeField]
     [Tooltip("If The Player has a shield")]
     private bool _hasShield;
+
+    private int _multiplier = 1;
+    private int _multiplierTimer = 0;
     #endregion
 
 
@@ -102,6 +109,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         _HeartTakenEvent.Subscribe(HeartTaken);
         _CoinTakenEvent.Subscribe(CoinTaken);
         _DamageTakenEvent.Subscribe(DamageTaken);
+        _X2TakenEvent.Subscribe(X2Taken);
 
         SystemCoordinator.Instance.FinishSystemSetup(this);
     }
@@ -112,16 +120,18 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         _HeartTakenEvent.Unsubscribe(HeartTaken);
         _CoinTakenEvent.Unsubscribe(CoinTaken);
         _DamageTakenEvent.Unsubscribe(DamageTaken);
+        _X2TakenEvent.Unsubscribe(X2Taken);
     }
 
     //used for testing
-    private void OnEnable()
-    {
-        _ShieldHitEvent.Subscribe(ShieldHit);
-        _HeartTakenEvent.Subscribe(HeartTaken);
-        _CoinTakenEvent.Subscribe(CoinTaken);
-        _DamageTakenEvent.Subscribe(DamageTaken);
-    }
+    // private void OnEnable()
+    // {
+    //     _ShieldHitEvent.Subscribe(ShieldHit);
+    //     _HeartTakenEvent.Subscribe(HeartTaken);
+    //     _CoinTakenEvent.Subscribe(CoinTaken);
+    //     _DamageTakenEvent.Subscribe(DamageTaken);
+    //     _X2TakenEvent.Subscribe(X2Taken);
+    // }
 
 
     //Event handler
@@ -148,7 +158,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     void CoinTaken(GameEvent evt)
     {
         Debug.Log("Coin taken");
-        setPoints(points + 100);
+        setPoints(points + (100 * _multiplier));
     }
 
     void DamageTaken(GameEvent evt)
@@ -169,6 +179,31 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         }
     }
 
+    void X2Taken(GameEvent evt)
+    {
+        Debug.Log("X2 taken");
+        if (_multiplier == 1)
+        {
+            _multiplier++;
+            //Debug.Log("Multiplier taken ");
+            _multiplierTimer = 10;
+            StartCoroutine(ResetMultiplier());
+        }
+    }
+
+    private IEnumerator ResetMultiplier()
+    {
+        while (_multiplierTimer > 0)
+        {
+            yield return new WaitForSeconds(1);
+            _multiplierTimer--;
+            //Debug.Log("Multiplier timer: " + _multiplierTimer);
+        }
+        //yield return new WaitForSeconds(10);
+        _multiplier = 1;
+
+        //Debug.Log("Multiplier reset");
+    }
 
     //Velocity Test
     [ContextMenu("InvokeEvent")]
