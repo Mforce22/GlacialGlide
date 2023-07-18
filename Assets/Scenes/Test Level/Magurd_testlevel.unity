@@ -123,6 +123,25 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &413837330 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 830712655934130759, guid: 34e44c65762bc1a4699b7019c8ae72da, type: 3}
+  m_PrefabInstance: {fileID: 5065521589841282608}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &413837337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413837330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb1981ff47f73e4caab0a5136c4165e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _EventToInvoke: {fileID: 0}
+  _idPoolManager: {fileID: 0}
 --- !u!1001 &891467101
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -649,9 +668,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4022492670971922014, guid: d1be1e61541eff943bb26459d12acf00, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 127150047431663525, guid: d1be1e61541eff943bb26459d12acf00, type: 3}
       propertyPath: m_Name
       value: TestPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 4795397660857894141, guid: d1be1e61541eff943bb26459d12acf00, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4795397660857894141, guid: d1be1e61541eff943bb26459d12acf00, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8926513174883439138, guid: d1be1e61541eff943bb26459d12acf00, type: 3}
       propertyPath: m_RootOrder
@@ -811,6 +842,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5488138918337317076, guid: 34e44c65762bc1a4699b7019c8ae72da, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34e44c65762bc1a4699b7019c8ae72da, type: 3}
 --- !u!1001 &6952015201021540271
@@ -929,6 +964,14 @@ PrefabInstance:
       propertyPath: velocity
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4624569719816091465, guid: b06ff5887c5f03a4d93ac013376ab6f5, type: 3}
+      propertyPath: _ShieldHitEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 208ee963d0b2ac64d80be1453c70e3d6, type: 2}
+    - target: {fileID: 4624569719816091465, guid: b06ff5887c5f03a4d93ac013376ab6f5, type: 3}
+      propertyPath: _SpeedChangeEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: e258b91dbda03e34aa3af0083fa80525, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b06ff5887c5f03a4d93ac013376ab6f5, type: 3}
 --- !u!1001 &7916794195934889114

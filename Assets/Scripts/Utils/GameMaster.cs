@@ -16,6 +16,14 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     [SerializeField]
     private GameEvent _SpeedChangeEvent;
 
+    [Tooltip("Event listened when the player hit a shield")]
+    [SerializeField]
+    private GameEvent _ShieldHitEvent;
+
+    [Tooltip("Event listened when the player take a heart")]
+    [SerializeField]
+    private GameEvent _HeartTakenEvent;
+
     #region variables
 
     [Header("Game Master Settings")]
@@ -35,6 +43,10 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     [SerializeField]
     [Tooltip("Player points")]
     private int points;
+
+    [SerializeField]
+    [Tooltip("If The Player has a shield")]
+    private bool _hasShield;
     #endregion
 
 
@@ -77,7 +89,48 @@ public class GameMaster : Singleton<GameMaster>, ISystem
 
     public void Setup()
     {
+        //subscibe to the event
+        _ShieldHitEvent.Subscribe(ShieldHit);
+        _HeartTakenEvent.Subscribe(HeartTaken);
+
         SystemCoordinator.Instance.FinishSystemSetup(this);
+    }
+
+    private void OnDisable()
+    {
+        _ShieldHitEvent.Unsubscribe(ShieldHit);
+        _HeartTakenEvent.Unsubscribe(HeartTaken);
+    }
+
+    //used for testing
+    private void OnEnable()
+    {
+        _ShieldHitEvent.Subscribe(ShieldHit);
+        _HeartTakenEvent.Subscribe(HeartTaken);
+    }
+
+
+    //Event handler
+    void ShieldHit(GameEvent evt)
+    {
+        Debug.Log("Shield gained");
+        if (!_hasShield)
+        {
+            _hasShield = true;
+        }
+
+        //_HeartTakenEvent.Subscribe(HeartTaken);
+    }
+
+    void HeartTaken(GameEvent evt)
+    {
+        Debug.Log("Heart taken");
+
+        if (hearts < 3)
+        {
+            hearts++;
+        }
+        //hearts++;
     }
 
 
