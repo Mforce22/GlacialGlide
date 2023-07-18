@@ -11,11 +11,25 @@ public class Movement : MonoBehaviour
 
     [Header("Movement")]
     private int _movement;
+
+    private void Awake()
+    {
+        //_ChangeSpeedEvent.Subscribe(SpeedChanged);
+    }
+
+    private void OnDisable()
+    {
+        _ChangeSpeedEvent.Unsubscribe(SpeedChanged);
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
         //get instance of GameMaster
         _movement = GameMaster.Instance.getVelocity();
+
+        //used for testing
         _ChangeSpeedEvent.Subscribe(SpeedChanged);
     }
 
