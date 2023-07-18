@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5557023727049923964}
   - component: {fileID: -6813286361874349131}
   - component: {fileID: 7854728178768010139}
+  - component: {fileID: 470632268}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -122,6 +123,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slopeEnd: {fileID: 4783415839181879176, guid: aaa95719e694648448a253a5aad063d4, type: 3}
+  _idPoolManager: {fileID: 11400000, guid: 491397e3985401640928064772565ece, type: 2}
+--- !u!114 &470632268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830712655934130759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb1981ff47f73e4caab0a5136c4165e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _EventToInvoke: {fileID: 11400000, guid: c735f0900a4844b46b1b19f95a587b57, type: 2}
   _idPoolManager: {fileID: 11400000, guid: 491397e3985401640928064772565ece, type: 2}
 --- !u!1 &2492982798539034233
 GameObject:

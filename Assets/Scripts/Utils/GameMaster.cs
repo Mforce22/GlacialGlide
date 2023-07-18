@@ -24,6 +24,10 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     [SerializeField]
     private GameEvent _HeartTakenEvent;
 
+    [Tooltip("Event listened when the player take a coin")]
+    [SerializeField]
+    private GameEvent _CoinTakenEvent;
+
     #region variables
 
     [Header("Game Master Settings")]
@@ -92,6 +96,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         //subscibe to the event
         _ShieldHitEvent.Subscribe(ShieldHit);
         _HeartTakenEvent.Subscribe(HeartTaken);
+        _CoinTakenEvent.Subscribe(CoinTaken);
 
         SystemCoordinator.Instance.FinishSystemSetup(this);
     }
@@ -100,6 +105,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     {
         _ShieldHitEvent.Unsubscribe(ShieldHit);
         _HeartTakenEvent.Unsubscribe(HeartTaken);
+        _CoinTakenEvent.Unsubscribe(CoinTaken);
     }
 
     //used for testing
@@ -107,6 +113,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     {
         _ShieldHitEvent.Subscribe(ShieldHit);
         _HeartTakenEvent.Subscribe(HeartTaken);
+        _CoinTakenEvent.Subscribe(CoinTaken);
     }
 
 
@@ -118,8 +125,6 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         {
             _hasShield = true;
         }
-
-        //_HeartTakenEvent.Subscribe(HeartTaken);
     }
 
     void HeartTaken(GameEvent evt)
@@ -131,6 +136,12 @@ public class GameMaster : Singleton<GameMaster>, ISystem
             hearts++;
         }
         //hearts++;
+    }
+
+    void CoinTaken(GameEvent evt)
+    {
+        Debug.Log("Coin taken");
+        setPoints(points + 100);
     }
 
 
