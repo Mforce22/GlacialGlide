@@ -174,7 +174,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem
             if (hearts <= 0)
             {
                 //game over
-                Debug.Log("Game Over");
+                GameOver();
             }
         }
     }
@@ -203,6 +203,14 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         _multiplier = 1;
 
         //Debug.Log("Multiplier reset");
+    }
+
+
+
+    //Gameover
+    public void GameOver()
+    {
+        Debug.Log("Game Over");
     }
 
     //Velocity Test
