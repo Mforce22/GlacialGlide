@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 5990776070718229188}
   - component: {fileID: -78766916961549670}
   - component: {fileID: 4457190106428785700}
+  - component: {fileID: 3739864681009598845}
   m_Layer: 0
   m_Name: X2
   m_TagString: Untagged
@@ -206,4 +207,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slopeEnd: {fileID: 4783415839181879176, guid: aaa95719e694648448a253a5aad063d4, type: 3}
+  _idPoolManager: {fileID: 11400000, guid: b6d7fefd10a56b441a54ce87fb3a184e, type: 2}
+--- !u!114 &3739864681009598845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4549753684575246427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb1981ff47f73e4caab0a5136c4165e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _EventToInvoke: {fileID: 11400000, guid: d1a6e3f1617d8c3459b2d1f5587b86e1, type: 2}
   _idPoolManager: {fileID: 11400000, guid: b6d7fefd10a56b441a54ce87fb3a184e, type: 2}

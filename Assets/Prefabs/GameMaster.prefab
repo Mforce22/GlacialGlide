@@ -46,10 +46,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Priority: 1
-  velocity: 10
+  _SpeedChangeEvent: {fileID: 11400000, guid: e258b91dbda03e34aa3af0083fa80525, type: 2}
+  _ShieldHitEvent: {fileID: 11400000, guid: 208ee963d0b2ac64d80be1453c70e3d6, type: 2}
+  _HeartTakenEvent: {fileID: 11400000, guid: ced15e19e974abe47a2dd801318dfa2f, type: 2}
+  _CoinTakenEvent: {fileID: 11400000, guid: c735f0900a4844b46b1b19f95a587b57, type: 2}
+  _DamageTakenEvent: {fileID: 11400000, guid: a766238b099f6d24b9303453367e6b3f, type: 2}
+  _X2TakenEvent: {fileID: 11400000, guid: d1a6e3f1617d8c3459b2d1f5587b86e1, type: 2}
+  velocity: 2
   isPaused: 0
   hearts: 3
   points: 0
+  _hasShield: 0
 --- !u!114 &6572662449265364999
 MonoBehaviour:
   m_ObjectHideFlags: 0

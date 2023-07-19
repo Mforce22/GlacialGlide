@@ -14,7 +14,9 @@ GameObject:
   - component: {fileID: 5557023727049923964}
   - component: {fileID: -2415384460628214288}
   - component: {fileID: 1243596204253187828}
-  m_Layer: 0
+  - component: {fileID: 5247673887112336013}
+  - component: {fileID: 2458220857745051907}
+  m_Layer: 7
   m_Name: Tree3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,7 +67,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 830712655934130759}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -123,6 +125,58 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _slopeEnd: {fileID: 4783415839181879176, guid: aaa95719e694648448a253a5aad063d4, type: 3}
   _idPoolManager: {fileID: 11400000, guid: ce72b7b807e075e4bacafe29151b668d, type: 2}
+--- !u!114 &5247673887112336013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830712655934130759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff7eb90b737a143409b8bc3dad1ff839, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _EventToInvoke: {fileID: 11400000, guid: a766238b099f6d24b9303453367e6b3f, type: 2}
+--- !u!60 &2458220857745051907
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830712655934130759}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.08463969, y: 1.095925}
+      - {x: -0.23444045, y: 0.596792}
+      - {x: -0.16997309, y: 0.35755646}
+      - {x: -0.24294654, y: -0.0008458644}
+      - {x: -0.3723413, y: -0.24838561}
+      - {x: -0.49118087, y: -0.5609064}
+      - {x: -0.16410325, y: -0.5785704}
+      - {x: -0.3000102, y: -1.0572934}
+      - {x: 0.10311559, y: -1.0454102}
+      - {x: 0.09140557, y: -0.70288086}
+      - {x: 0.5121165, y: -0.49816567}
+      - {x: 0.46798006, y: 0.043180846}
+      - {x: 0.35153556, y: 0.3667024}
+      - {x: 0.37550652, y: 0.60807735}
 --- !u!1 &2032673495418904041
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,7 +187,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1734706451371631652}
   - component: {fileID: 3395218931674302846}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tree3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

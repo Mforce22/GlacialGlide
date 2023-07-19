@@ -312,6 +312,14 @@ PrefabInstance:
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4624569719816091465, guid: b06ff5887c5f03a4d93ac013376ab6f5, type: 3}
+      propertyPath: _ShieldHitEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 208ee963d0b2ac64d80be1453c70e3d6, type: 2}
+    - target: {fileID: 4624569719816091465, guid: b06ff5887c5f03a4d93ac013376ab6f5, type: 3}
+      propertyPath: _HeartTakenEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: ced15e19e974abe47a2dd801318dfa2f, type: 2}
+    - target: {fileID: 4624569719816091465, guid: b06ff5887c5f03a4d93ac013376ab6f5, type: 3}
       propertyPath: _SpeedChangeEvent
       value: 
       objectReference: {fileID: 11400000, guid: e258b91dbda03e34aa3af0083fa80525, type: 2}

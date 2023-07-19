@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 5557023727049923964}
   - component: {fileID: -5372580464977903586}
   - component: {fileID: 2535647382028926308}
-  m_Layer: 0
+  - component: {fileID: 824505468}
+  m_Layer: 7
   m_Name: Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,6 +124,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _slopeEnd: {fileID: 4783415839181879176, guid: aaa95719e694648448a253a5aad063d4, type: 3}
   _idPoolManager: {fileID: 11400000, guid: ed17dd1b2c84077489ee754be39bf95d, type: 2}
+--- !u!114 &824505468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830712655934130759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb1981ff47f73e4caab0a5136c4165e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _EventToInvoke: {fileID: 11400000, guid: 208ee963d0b2ac64d80be1453c70e3d6, type: 2}
+  _idPoolManager: {fileID: 11400000, guid: ed17dd1b2c84077489ee754be39bf95d, type: 2}
 --- !u!1 &9116480215595108574
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,7 +148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4614893728967772295}
   - component: {fileID: 1181535762250283246}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
