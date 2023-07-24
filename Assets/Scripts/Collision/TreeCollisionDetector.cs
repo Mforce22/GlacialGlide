@@ -17,7 +17,7 @@ public class TreeCollisionDetector : MonoBehaviour
         if (!_haveAlreadyDamaged)
         {
             _haveAlreadyDamaged = true;
-            Debug.Log("Trigger detected " + gameObject.name);
+            Debug.Log("Trigger detected " + gameObject.name + " on " + other.gameObject.name);
             _EventToInvoke.Invoke();
         }
 
