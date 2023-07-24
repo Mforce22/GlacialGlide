@@ -7,14 +7,14 @@ public class InputManager : MonoBehaviour
 
     private GPSInput playerControls = null;
     private Vector2 moveVector = Vector2.zero;
-    private Rigidbody2D rb= null;
-
     [SerializeField]
-    private float moveSpeed = 10f;
+    private GameObject rb= null;
+    [SerializeField]
+    private float _Velocity;
+
     private void Awake()
     {
         playerControls = new GPSInput();
-        rb = GetComponent<Rigidbody2D>();
     }
 
     private void OnEnable()
@@ -34,7 +34,11 @@ public class InputManager : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        rb.velocity = moveVector * moveSpeed;
+        if(moveVector.x < 0) {
+            rb.transform.position -= new Vector3(_Velocity, 0,0);
+        } else if(moveVector.x > 0) {
+            rb.transform.position += new Vector3(_Velocity, 0, 0);
+        }
     }
     private void OnMovementPerformed(InputAction.CallbackContext value)
     {
