@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class OptionsViewController : MonoBehaviour
 {
+    public void ChangeScene(string scene) {
+        TravelSystem.Instance.SceneLoad(scene);
+        AudioSystem.Instance.StopMusic();
+    }
     public void CloseOption()
     {
         GameMaster.Instance.setPause(false);

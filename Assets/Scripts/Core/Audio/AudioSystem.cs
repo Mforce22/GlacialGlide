@@ -33,4 +33,8 @@ public class AudioSystem : Singleton<AudioSystem>, ISystem {
         // start music
         musicSource.Play();
     }
+
+    public void StopMusic() {
+        musicSource.Stop();
+    }
 }
