@@ -35,9 +35,9 @@ public class InputManager : MonoBehaviour
     private void FixedUpdate()
     {
         if(moveVector.x < 0) {
-            rb.transform.position -= new Vector3(_Velocity, 0,0);
+            rb.transform.position -= new Vector3(_Velocity * Time.deltaTime, 0,0);
         } else if(moveVector.x > 0) {
-            rb.transform.position += new Vector3(_Velocity, 0, 0);
+            rb.transform.position += new Vector3(_Velocity * Time.deltaTime, 0, 0);
         }
     }
     private void OnMovementPerformed(InputAction.CallbackContext value)
