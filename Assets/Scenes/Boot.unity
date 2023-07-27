@@ -304,6 +304,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4624569719816091465, guid: b06ff5887c5f03a4d93ac013376ab6f5, type: 3}
+      propertyPath: _DeathUI
+      value: 
+      objectReference: {fileID: 8166578741370957729, guid: 6fd63cd9126f9334a966f9086f09939a, type: 3}
+    - target: {fileID: 4624569719816091465, guid: b06ff5887c5f03a4d93ac013376ab6f5, type: 3}
       propertyPath: velocity
       value: 2
       objectReference: {fileID: 0}
@@ -312,9 +316,17 @@ PrefabInstance:
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4624569719816091465, guid: b06ff5887c5f03a4d93ac013376ab6f5, type: 3}
+      propertyPath: _SlopeEnd
+      value: 
+      objectReference: {fileID: 4783415839181879176, guid: aaa95719e694648448a253a5aad063d4, type: 3}
+    - target: {fileID: 4624569719816091465, guid: b06ff5887c5f03a4d93ac013376ab6f5, type: 3}
       propertyPath: _ShieldHitEvent
       value: 
       objectReference: {fileID: 11400000, guid: 208ee963d0b2ac64d80be1453c70e3d6, type: 2}
+    - target: {fileID: 4624569719816091465, guid: b06ff5887c5f03a4d93ac013376ab6f5, type: 3}
+      propertyPath: _DeathViewPrefab
+      value: 
+      objectReference: {fileID: 4830035029626575163, guid: 6fd63cd9126f9334a966f9086f09939a, type: 3}
     - target: {fileID: 4624569719816091465, guid: b06ff5887c5f03a4d93ac013376ab6f5, type: 3}
       propertyPath: _HeartTakenEvent
       value: 

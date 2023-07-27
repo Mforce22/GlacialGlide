@@ -15,6 +15,11 @@ public class OptionsViewController : MonoBehaviour
         }
     }
     public void ChangeScene(string scene) {
+        GameMaster.Instance.setHearts(3);
+        GameMaster.Instance.setPause(false);
+        GameMaster.Instance.setPoints(0);
+        GameMaster.Instance.setVelocity(2);
+
         TravelSystem.Instance.SceneLoad(scene);
         AudioSystem.Instance.StopMusic();
     }
