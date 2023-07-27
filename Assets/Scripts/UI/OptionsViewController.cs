@@ -1,10 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class OptionsViewController : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject _button;
+    private void Start() {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        if(currentSceneName == "MainMenu") {
+            _button.SetActive(false);
+        }
+    }
     public void ChangeScene(string scene) {
         TravelSystem.Instance.SceneLoad(scene);
         AudioSystem.Instance.StopMusic();

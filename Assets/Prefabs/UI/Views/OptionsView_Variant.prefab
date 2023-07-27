@@ -1370,6 +1370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78bb78133e9c3b64c876e5dfdfcba80a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _button: {fileID: 1766563565774730634}
 --- !u!1001 &6516064829345940255
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1379,12 +1380,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4821576484729829013, guid: 64fa3645a126f0449bdfced50779d4cb, type: 3}
       propertyPath: m_Name
-      value: "Men\xF9"
+      value: Menu
       objectReference: {fileID: 0}
     - target: {fileID: 5304566062673869892, guid: 64fa3645a126f0449bdfced50779d4cb, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: bae113a1ebe097c4784e3084cef36a17, type: 3}
+    - target: {fileID: 5304566062673869892, guid: 64fa3645a126f0449bdfced50779d4cb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6074294571098696415, guid: 64fa3645a126f0449bdfced50779d4cb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1474,6 +1479,10 @@ PrefabInstance:
       value: OPTIONS
       objectReference: {fileID: 0}
     - target: {fileID: 7400467228216435968, guid: 64fa3645a126f0449bdfced50779d4cb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7400467228216435968, guid: 64fa3645a126f0449bdfced50779d4cb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -1510,5 +1519,10 @@ PrefabInstance:
 --- !u!224 &1018249794100865472 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6074294571098696415, guid: 64fa3645a126f0449bdfced50779d4cb, type: 3}
+  m_PrefabInstance: {fileID: 6516064829345940255}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1766563565774730634 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4821576484729829013, guid: 64fa3645a126f0449bdfced50779d4cb, type: 3}
   m_PrefabInstance: {fileID: 6516064829345940255}
   m_PrefabAsset: {fileID: 0}
