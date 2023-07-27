@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
 
 public class GameMaster : Singleton<GameMaster>, ISystem
@@ -35,7 +36,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     [Tooltip("Event listened when the player take a X2")]
     [SerializeField]
     private GameEvent _X2TakenEvent;
-
+    
     #region variables
 
     [Header("Game Master Settings")]
@@ -62,6 +63,15 @@ public class GameMaster : Singleton<GameMaster>, ISystem
 
     private int _multiplier = 1;
     private int _multiplierTimer = 0;
+
+    [Tooltip("UI instantieated when player die")]
+    [SerializeField]
+    private DeathViewController _DeathViewPrefab;
+
+    private DeathViewController _deathViewController;
+
+    [SerializeField]
+    private GameObject _SlopeEnd;
     #endregion
 
 
@@ -211,6 +221,16 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     public void GameOver()
     {
         Debug.Log("Game Over");
+        if (_deathViewController) return;
+        _deathViewController = Instantiate(_DeathViewPrefab);
+        isPaused = true;
+
+        PoolableObject[] allObjectsInScene = FindObjectsOfType<PoolableObject>();
+        foreach (PoolableObject obj in allObjectsInScene) {
+            if (obj.isActiveAndEnabled) {
+                obj.transform.position = _SlopeEnd.transform.position;
+            }
+        }
     }
 
     //Velocity Test
