@@ -1,15 +1,16 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnCollectibles : MonoBehaviour
-{
+public class SpawnCollectibles : MonoBehaviour {
     #region variables
     [Header("Spawn Settings")]
 
     [SerializeField]
     [Tooltip("Seconds of spawn rate")]
     private float SpawnRate;
+    [SerializeField]
+    [Tooltip("Seconds of spawn rate decrease")]
+    private float SpawnRateDecrease;
 
     [SerializeField]
     [Tooltip("Trees spawn rate")]
@@ -74,8 +75,29 @@ public class SpawnCollectibles : MonoBehaviour
     private GameObject SpawnPoint;
     #endregion
 
+    #region GameEvents
+    [Tooltip("Event invoked when the spawn rate is changed")]
+    [SerializeField]
+    private GameEvent _SpawnRateChangeEvent;
+    #endregion
+
+    #region Setters&Getters
+    public void setSpawRate(float value) {
+        this.SpawnRate = value;
+    }
+    public float getSpawnRate() {
+        return this.SpawnRate;
+    }
+    #endregion
+
     private void Start() {
+        _SpawnRateChangeEvent.Subscribe(SpawnRateChange);
+        GameMaster.Instance.setDeath(false);
         StartCoroutine(SpawnCollectiblesCoroutine());
+    }
+
+    private void OnDisable() {
+        _SpawnRateChangeEvent.Unsubscribe(SpawnRateChange);
     }
 
     private IEnumerator SpawnCollectiblesCoroutine() {
@@ -85,6 +107,7 @@ public class SpawnCollectibles : MonoBehaviour
 
             //wait 0.6 seconds
             yield return new WaitForSeconds(SpawnRate);
+            Debug.Log("Waited " + SpawnRate + " seconds");
 
             if (!GameMaster.Instance.getPause()) {
                 int randomValue = Random.Range(0, 100);
@@ -125,7 +148,7 @@ public class SpawnCollectibles : MonoBehaviour
         int randomIndex = Random.Range(1, 4);
         PoolableObject treePrefab = null;
         PoolManager poolManager = null;
-        
+
         switch (randomIndex) {
             case 1:
                 poolManager = PoolingSystem.Instance.getPoolManagerInstance(Tree1ManagerContainer);
@@ -196,4 +219,7 @@ public class SpawnCollectibles : MonoBehaviour
         }
     }
 
+    private void SpawnRateChange(GameEvent evt) {
+        this.SpawnRate -= SpawnRateDecrease;
+    }
 }

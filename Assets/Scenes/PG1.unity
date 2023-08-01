@@ -447,6 +447,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slopes
       objectReference: {fileID: 0}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: SpawnRate
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: SpawnRateDecrease
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: _SpawnRateChangeEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 31a61d097cba22842810a2eab4091d9a, type: 2}
     - target: {fileID: 6912198812420696936, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -582,7 +594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1729128223}
-  _Velocity: 1
+  _Velocity: 2
 --- !u!50 &1729128226
 Rigidbody2D:
   serializedVersion: 4
