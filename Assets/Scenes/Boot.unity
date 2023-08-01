@@ -332,9 +332,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: ced15e19e974abe47a2dd801318dfa2f, type: 2}
     - target: {fileID: 4624569719816091465, guid: b06ff5887c5f03a4d93ac013376ab6f5, type: 3}
+      propertyPath: velocityLevelTwo
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4624569719816091465, guid: b06ff5887c5f03a4d93ac013376ab6f5, type: 3}
       propertyPath: _SpeedChangeEvent
       value: 
       objectReference: {fileID: 11400000, guid: e258b91dbda03e34aa3af0083fa80525, type: 2}
+    - target: {fileID: 4624569719816091465, guid: b06ff5887c5f03a4d93ac013376ab6f5, type: 3}
+      propertyPath: velocityLevelThree
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4624569719816091465, guid: b06ff5887c5f03a4d93ac013376ab6f5, type: 3}
+      propertyPath: _SpawnRateChangeInvoke
+      value: 
+      objectReference: {fileID: 11400000, guid: 31a61d097cba22842810a2eab4091d9a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b06ff5887c5f03a4d93ac013376ab6f5, type: 3}
 --- !u!1 &1819265359

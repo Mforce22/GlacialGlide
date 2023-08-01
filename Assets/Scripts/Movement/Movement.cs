@@ -14,7 +14,7 @@ public class Movement : MonoBehaviour
 
     private void Awake()
     {
-        //_ChangeSpeedEvent.Subscribe(SpeedChanged);
+        _ChangeSpeedEvent.Subscribe(SpeedChanged);
     }
 
     private void OnDisable()
