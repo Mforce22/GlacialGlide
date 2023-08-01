@@ -36,7 +36,33 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     [Tooltip("Event listened when the player take a X2")]
     [SerializeField]
     private GameEvent _X2TakenEvent;
-    
+
+
+    [Tooltip("Event listened when the player enter a small ramp")]
+    [SerializeField]
+    private GameEvent _SmallRampEnterEvent;
+
+    [Tooltip("Event listened when the player enter a medium ramp")]
+    [SerializeField]
+    private GameEvent _MediumRampEnterEvent;
+
+    [Tooltip("Event listened when the player enter a big ramp")]
+    [SerializeField]
+    private GameEvent _BigRampEnterEvent;
+
+    [Tooltip("Event listened when the player exit a small ramp")]
+    [SerializeField]
+    private GameEvent _SmallRampExitEvent;
+
+    [Tooltip("Event listened when the player exit a medium ramp")]
+    [SerializeField]
+    private GameEvent _MediumRampExitEvent;
+
+
+    [Tooltip("Event listened when the player exit a big ramp")]
+    [SerializeField]
+    private GameEvent _HardRampExitEvent;
+
     #region variables
 
     [Header("Game Master Settings")]
@@ -72,6 +98,11 @@ public class GameMaster : Singleton<GameMaster>, ISystem
 
     [SerializeField]
     private GameObject _SlopeEnd;
+
+
+    private bool _canEasyJump = false;
+    private bool _canMediumJump = false;
+    private bool _canHardJump = false;
     #endregion
 
 
@@ -120,6 +151,12 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         _CoinTakenEvent.Subscribe(CoinTaken);
         _DamageTakenEvent.Subscribe(DamageTaken);
         _X2TakenEvent.Subscribe(X2Taken);
+        _SmallRampEnterEvent.Subscribe(EasyRampEnter);
+        _MediumRampEnterEvent.Subscribe(MediumRampEnter);
+        _BigRampEnterEvent.Subscribe(HardRampEnter);
+        _SmallRampExitEvent.Subscribe(EasyRampExit);
+        _MediumRampExitEvent.Subscribe(MediumRampExit);
+        _HardRampExitEvent.Subscribe(HardRampExit);
 
         SystemCoordinator.Instance.FinishSystemSetup(this);
     }
@@ -131,6 +168,12 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         _CoinTakenEvent.Unsubscribe(CoinTaken);
         _DamageTakenEvent.Unsubscribe(DamageTaken);
         _X2TakenEvent.Unsubscribe(X2Taken);
+        _SmallRampEnterEvent.Unsubscribe(EasyRampEnter);
+        _MediumRampEnterEvent.Unsubscribe(MediumRampEnter);
+        _BigRampEnterEvent.Unsubscribe(HardRampEnter);
+        _SmallRampExitEvent.Unsubscribe(EasyRampExit);
+        _MediumRampExitEvent.Unsubscribe(MediumRampExit);
+        _HardRampExitEvent.Unsubscribe(HardRampExit);
     }
 
     //used for testing
@@ -215,6 +258,34 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         //Debug.Log("Multiplier reset");
     }
 
+    #region Ramp Events
+    public void EasyRampEnter(GameEvent evt)
+    {
+        _canEasyJump = true;
+    }
+    public void EasyRampExit(GameEvent evt)
+    {
+        _canEasyJump = false;
+    }
+    
+    public void MediumRampEnter(GameEvent evt)
+    {
+        _canMediumJump = true;
+    }
+    public void MediumRampExit(GameEvent evt)
+    {
+        _canMediumJump = false;
+    }
+
+    public void HardRampEnter(GameEvent evt)
+    {
+        _canHardJump = true;
+    }
+    public void HardRampExit(GameEvent evt)
+    {
+        _canHardJump = false;
+    }
+    #endregion
 
 
     //Gameover

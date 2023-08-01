@@ -52,11 +52,19 @@ MonoBehaviour:
   _CoinTakenEvent: {fileID: 11400000, guid: c735f0900a4844b46b1b19f95a587b57, type: 2}
   _DamageTakenEvent: {fileID: 11400000, guid: a766238b099f6d24b9303453367e6b3f, type: 2}
   _X2TakenEvent: {fileID: 11400000, guid: d1a6e3f1617d8c3459b2d1f5587b86e1, type: 2}
+  _SmallRampEnterEvent: {fileID: 11400000, guid: ef0569d093558a643bacf46ecd98b62e, type: 2}
+  _MediumRampEnterEvent: {fileID: 11400000, guid: 6265c221f2f9dac4a9fc8ae78b11dab7, type: 2}
+  _BigRampEnterEvent: {fileID: 11400000, guid: b5e28bbdeb6b4a841ad2c3fd2aa78761, type: 2}
+  _SmallRampExitEvent: {fileID: 11400000, guid: c91e308b0cd534f4e969d596d1dbb170, type: 2}
+  _MediumRampExitEvent: {fileID: 11400000, guid: ddf10f6a108243e49b851492940f3c3b, type: 2}
+  _HardRampExitEvent: {fileID: 11400000, guid: 70486ec3ed79b8e448aa01b05f8e374c, type: 2}
   velocity: 2
   isPaused: 0
   hearts: 3
   points: 0
   _hasShield: 0
+  _DeathViewPrefab: {fileID: 0}
+  _SlopeEnd: {fileID: 0}
 --- !u!114 &6572662449265364999
 MonoBehaviour:
   m_ObjectHideFlags: 0
