@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -6751242350918701367}
   - component: {fileID: -7716270108970276487}
   - component: {fileID: 6708910718384453623}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Medium_ramp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1602140862276809337}
   - component: {fileID: 7049821925567046288}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RampM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
