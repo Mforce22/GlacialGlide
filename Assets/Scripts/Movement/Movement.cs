@@ -17,6 +17,10 @@ public class Movement : MonoBehaviour
         _ChangeSpeedEvent.Subscribe(SpeedChanged);
     }
 
+    private void OnEnable() {
+        _movement = GameMaster.Instance.getVelocity();
+    }
+
     private void OnDisable()
     {
         _ChangeSpeedEvent.Unsubscribe(SpeedChanged);
@@ -29,7 +33,6 @@ public class Movement : MonoBehaviour
         //get instance of GameMaster
         _movement = GameMaster.Instance.getVelocity();
 
-        //used for testing
         _ChangeSpeedEvent.Subscribe(SpeedChanged);
     }
 
