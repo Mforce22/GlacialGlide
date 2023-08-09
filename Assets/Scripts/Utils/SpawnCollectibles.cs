@@ -1,6 +1,9 @@
 using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// This class handles the spawning of various collectibles in the game.
+/// </summary>
 public class SpawnCollectibles : MonoBehaviour {
     #region variables
     [Header("Spawn Settings")]
@@ -102,15 +105,17 @@ public class SpawnCollectibles : MonoBehaviour {
 
     private IEnumerator SpawnCollectiblesCoroutine() {
         while (true) {
-            //move the spawn point
+            // Move the spawn point.
             SpawnPoint.transform.position = new Vector3(Random.Range(-4.0f, 4.0f), SpawnPoint.transform.position.y, SpawnPoint.transform.position.z);
 
-            //wait 0.6 seconds
+            // Wait for the specified spawn rate.
             yield return new WaitForSeconds(SpawnRate);
             Debug.Log("Waited " + SpawnRate + " seconds");
 
             if (!GameMaster.Instance.getPause()) {
                 int randomValue = Random.Range(0, 100);
+                // Determine the type of collectible to spawn based on the randomValue.
+                // Call the appropriate spawning method.
 
                 //60 spawn rate trees
                 if (randomValue < Trees_SpawnRate) {
@@ -144,6 +149,7 @@ public class SpawnCollectibles : MonoBehaviour {
         }
     }
 
+    // Methods for spawning different types of collectibles, similar to the example above.
     private void SpawnTree() {
         int randomIndex = Random.Range(1, 4);
         PoolableObject treePrefab = null;
