@@ -320,6 +320,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4783415839181879176, guid: aaa95719e694648448a253a5aad063d4, type: 3}
     - target: {fileID: 4624569719816091465, guid: b06ff5887c5f03a4d93ac013376ab6f5, type: 3}
+      propertyPath: _X2Multiplier
+      value: 
+      objectReference: {fileID: 5611292664392235912, guid: e554395524407494892870e17fcef9c5, type: 3}
+    - target: {fileID: 4624569719816091465, guid: b06ff5887c5f03a4d93ac013376ab6f5, type: 3}
       propertyPath: _ShieldHitEvent
       value: 
       objectReference: {fileID: 11400000, guid: 208ee963d0b2ac64d80be1453c70e3d6, type: 2}
@@ -343,6 +347,10 @@ PrefabInstance:
       propertyPath: velocityLevelThree
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4624569719816091465, guid: b06ff5887c5f03a4d93ac013376ab6f5, type: 3}
+      propertyPath: _X2MultiplierPrefab
+      value: 
+      objectReference: {fileID: 5611292664392235912, guid: e554395524407494892870e17fcef9c5, type: 3}
     - target: {fileID: 4624569719816091465, guid: b06ff5887c5f03a4d93ac013376ab6f5, type: 3}
       propertyPath: _SpawnRateChangeInvoke
       value: 

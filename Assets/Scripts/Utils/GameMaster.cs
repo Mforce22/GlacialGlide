@@ -118,6 +118,10 @@ public class GameMaster : Singleton<GameMaster>, ISystem {
     private bool _levelOneControl = false;
     private bool _levelTwoControl = false;
     private bool _dead = false;
+
+    [SerializeField]
+    private GameObject _X2MultiplierPrefab;
+    private GameObject _X2Multiplier;
     #endregion
 
     #region Setters&Getters
@@ -155,6 +159,10 @@ public class GameMaster : Singleton<GameMaster>, ISystem {
     }
     public bool getDeath() {
         return _dead;
+    }
+
+    public int getMultiplierTimer() {
+        return _multiplierTimer;
     }
     #endregion
 
@@ -236,6 +244,8 @@ public class GameMaster : Singleton<GameMaster>, ISystem {
     }
 
     void X2Taken(GameEvent evt) {
+        if(_X2Multiplier == null)
+            _X2Multiplier = Instantiate(_X2MultiplierPrefab);
         Debug.Log("X2 taken");
         if (_multiplier == 1) {
             _multiplier++;
@@ -253,7 +263,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem {
         }
         //yield return new WaitForSeconds(10);
         _multiplier = 1;
-
+        Destroy(_X2Multiplier);
         //Debug.Log("Multiplier reset");
     }
 

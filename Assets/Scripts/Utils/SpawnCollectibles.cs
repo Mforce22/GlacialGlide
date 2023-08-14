@@ -189,6 +189,7 @@ public class SpawnCollectibles : MonoBehaviour {
         PoolableObject prefab = poolManager.GetPoolableObject<PoolableObject>();
         prefab.transform.position = SpawnPoint.transform.position;
     }
+    [ContextMenu("SpawnX2")]
     private void SpawnX2() {
         PoolManager poolManager = PoolingSystem.Instance.getPoolManagerInstance(X2ManagerContainer);
         PoolableObject prefab = poolManager.GetPoolableObject<PoolableObject>();
