@@ -200,29 +200,37 @@ public class SpawnCollectibles : MonoBehaviour {
         prefab.transform.position = SpawnPoint.transform.position;
     }
     private void SpawnRamp() {
-        int randomValue = Random.Range(0, 100);
-        PoolableObject rampPrefab = null;
-        PoolManager poolManager = null;
 
-        //75 spawn rate small ramp
-        if (randomValue < SRamp_SpawnRate) {
-            poolManager = PoolingSystem.Instance.getPoolManagerInstance(SRampManagerContainer);
-            rampPrefab = poolManager.GetPoolableObject<PoolableObject>();
-        }
-        //20 spawn rate medium ramp
-        else if (randomValue < (SRamp_SpawnRate + MRamp_SpawnRate) && randomValue > SRamp_SpawnRate) {
-            poolManager = PoolingSystem.Instance.getPoolManagerInstance(MRampManagerContainer);
-            rampPrefab = poolManager.GetPoolableObject<PoolableObject>();
-        }
-        //5 spawn rate big ramp
-        else if (randomValue < (SRamp_SpawnRate + MRamp_SpawnRate + LRamp_SpawnRate) && randomValue > (SRamp_SpawnRate + MRamp_SpawnRate)) {
-            poolManager = PoolingSystem.Instance.getPoolManagerInstance(LRampManagerContainer);
-            rampPrefab = poolManager.GetPoolableObject<PoolableObject>();
-        }
+        GameObject objectWithTag = GameObject.FindWithTag("Ramp");
 
-        if (rampPrefab != null) {
-            rampPrefab.transform.position = SpawnPoint.transform.position;
+        if(objectWithTag == null) {
+            int randomValue = Random.Range(0, 100);
+            PoolableObject rampPrefab = null;
+            PoolManager poolManager = null;
+
+            //75 spawn rate small ramp
+            if (randomValue < SRamp_SpawnRate) {
+                poolManager = PoolingSystem.Instance.getPoolManagerInstance(SRampManagerContainer);
+                rampPrefab = poolManager.GetPoolableObject<PoolableObject>();
+            }
+            //20 spawn rate medium ramp
+            else if (randomValue < (SRamp_SpawnRate + MRamp_SpawnRate) && randomValue > SRamp_SpawnRate) {
+                poolManager = PoolingSystem.Instance.getPoolManagerInstance(MRampManagerContainer);
+                rampPrefab = poolManager.GetPoolableObject<PoolableObject>();
+            }
+            //5 spawn rate big ramp
+            else if (randomValue < (SRamp_SpawnRate + MRamp_SpawnRate + LRamp_SpawnRate) && randomValue > (SRamp_SpawnRate + MRamp_SpawnRate)) {
+                poolManager = PoolingSystem.Instance.getPoolManagerInstance(LRampManagerContainer);
+                rampPrefab = poolManager.GetPoolableObject<PoolableObject>();
+            }
+
+            if (rampPrefab != null) {
+                SpawnPoint.transform.position = new Vector3(0, SpawnPoint.transform.position.y, SpawnPoint.transform.position.z);
+                rampPrefab.transform.position = SpawnPoint.transform.position;
+            }
         }
+        else
+            Debug.Log("Ramp already spawned");
     }
 
     private void SpawnRateChange(GameEvent evt) {
