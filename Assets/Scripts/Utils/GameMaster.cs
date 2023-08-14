@@ -297,6 +297,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem {
                 obj.transform.position = _SlopeEnd.transform.position;
             }
         }
+        isPaused = false;
     }
 
     //Velocity Test

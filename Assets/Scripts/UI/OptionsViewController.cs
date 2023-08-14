@@ -28,9 +28,9 @@ public class OptionsViewController : MonoBehaviour {
     public void ChangeScene(string scene) {
         // Reset game parameters.
         GameMaster.Instance.setHearts(3);
-        GameMaster.Instance.setPause(false);
         GameMaster.Instance.setPoints(0);
         GameMaster.Instance.setVelocity(2);
+        GameMaster.Instance.GameOver();
 
         // Load the specified scene and stop background music.
         TravelSystem.Instance.SceneLoad(scene);
