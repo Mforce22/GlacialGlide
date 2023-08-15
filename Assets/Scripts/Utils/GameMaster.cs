@@ -1,7 +1,8 @@
 using System.Collections;
 using UnityEngine;
 
-public class GameMaster : Singleton<GameMaster>, ISystem {
+public class GameMaster : Singleton<GameMaster>, ISystem
+{
     [Header("System Settings")]
 
     #region Priority
@@ -125,48 +126,60 @@ public class GameMaster : Singleton<GameMaster>, ISystem {
     #endregion
 
     #region Setters&Getters
-    public void setVelocity(int _velocity) {
+    public void setVelocity(int _velocity)
+    {
         velocity = _velocity;
         _SpeedChangeEvent.Invoke();
     }
-    public int getVelocity() {
+    public int getVelocity()
+    {
         return velocity;
     }
 
-    public void setPause(bool paused) {
+    public void setPause(bool paused)
+    {
         isPaused = paused;
     }
-    public bool getPause() {
+    public bool getPause()
+    {
         return isPaused;
     }
 
-    public void setHearts(int _hearts) {
+    public void setHearts(int _hearts)
+    {
         hearts = _hearts;
     }
-    public int getHearts() {
+    public int getHearts()
+    {
         return hearts;
     }
 
-    public void setPoints(int _points) {
+    public void setPoints(int _points)
+    {
         points = _points;
     }
-    public int getPoints() {
+    public int getPoints()
+    {
         return points;
     }
 
-    public void setDeath(bool _dead) {
+    public void setDeath(bool _dead)
+    {
         this._dead = _dead;
     }
-    public bool getDeath() {
+    public bool getDeath()
+    {
         return _dead;
     }
 
-    public int getMultiplierTimer() {
+    public int getMultiplierTimer()
+    {
         return _multiplierTimer;
     }
     #endregion
 
-    public void Setup() {
+    public void Setup()
+    {
         //subscibe to the event
         _ShieldHitEvent.Subscribe(ShieldHit);
         _HeartTakenEvent.Subscribe(HeartTaken);
@@ -183,7 +196,8 @@ public class GameMaster : Singleton<GameMaster>, ISystem {
         SystemCoordinator.Instance.FinishSystemSetup(this);
     }
 
-    private void OnDisable() {
+    private void OnDisable()
+    {
         _ShieldHitEvent.Unsubscribe(ShieldHit);
         _HeartTakenEvent.Unsubscribe(HeartTaken);
         _CoinTakenEvent.Unsubscribe(CoinTaken);
@@ -209,54 +223,72 @@ public class GameMaster : Singleton<GameMaster>, ISystem {
 
 
     //Event handler
-    void ShieldHit(GameEvent evt) {
+    void ShieldHit(GameEvent evt)
+    {
         Debug.Log("Shield gained");
-        if (!_hasShield) {
+        if (!_hasShield)
+        {
             _hasShield = true;
         }
     }
 
-    void HeartTaken(GameEvent evt) {
+    void HeartTaken(GameEvent evt)
+    {
         Debug.Log("Heart taken");
 
-        if (hearts < 3) {
+        if (hearts < 3)
+        {
             hearts++;
         }
         //hearts++;
     }
 
-    void CoinTaken(GameEvent evt) {
+    void CoinTaken(GameEvent evt)
+    {
         Debug.Log("Coin taken");
         setPoints(points + (100 * _multiplier));
     }
 
-    void DamageTaken(GameEvent evt) {
+    void DamageTaken(GameEvent evt)
+    {
         Debug.Log("Damage taken");
-        if (_hasShield) {
+        if (_hasShield)
+        {
             _hasShield = false;
-        } else {
+        }
+        else
+        {
             setHearts(hearts - 1);
-            if (hearts <= 0) {
+            if (hearts <= 0)
+            {
                 //game over
                 GameOver();
             }
         }
     }
 
-    void X2Taken(GameEvent evt) {
-        if(_X2Multiplier == null)
+    void X2Taken(GameEvent evt)
+    {
+        if (_X2Multiplier == null)
             _X2Multiplier = Instantiate(_X2MultiplierPrefab);
         Debug.Log("X2 taken");
-        if (_multiplier == 1) {
+        if (_multiplier == 1)
+        {
             _multiplier++;
             //Debug.Log("Multiplier taken ");
             _multiplierTimer = 10;
             StartCoroutine(ResetMultiplier());
         }
+        else
+        {
+            _multiplierTimer += 10;
+        }
     }
 
-    private IEnumerator ResetMultiplier() {
-        while (_multiplierTimer > 0) {
+    private IEnumerator ResetMultiplier()
+    {
+        while (_multiplierTimer > 0)
+        {
             yield return new WaitForSeconds(1);
             _multiplierTimer--;
             //Debug.Log("Multiplier timer: " + _multiplierTimer);
@@ -268,31 +300,38 @@ public class GameMaster : Singleton<GameMaster>, ISystem {
     }
 
     #region Ramp Events
-    public void EasyRampEnter(GameEvent evt) {
+    public void EasyRampEnter(GameEvent evt)
+    {
         _canEasyJump = true;
     }
-    public void EasyRampExit(GameEvent evt) {
+    public void EasyRampExit(GameEvent evt)
+    {
         _canEasyJump = false;
     }
 
-    public void MediumRampEnter(GameEvent evt) {
+    public void MediumRampEnter(GameEvent evt)
+    {
         _canMediumJump = true;
     }
-    public void MediumRampExit(GameEvent evt) {
+    public void MediumRampExit(GameEvent evt)
+    {
         _canMediumJump = false;
     }
 
-    public void HardRampEnter(GameEvent evt) {
+    public void HardRampEnter(GameEvent evt)
+    {
         _canHardJump = true;
     }
-    public void HardRampExit(GameEvent evt) {
+    public void HardRampExit(GameEvent evt)
+    {
         _canHardJump = false;
     }
     #endregion
 
 
     //Gameover
-    public void GameOver() {
+    public void GameOver()
+    {
         Debug.Log("Game Over");
         if (_deathViewController) return;
         _deathViewController = Instantiate(_DeathViewPrefab);
@@ -302,8 +341,10 @@ public class GameMaster : Singleton<GameMaster>, ISystem {
         this._levelTwoControl = false;
 
         PoolableObject[] allObjectsInScene = FindObjectsOfType<PoolableObject>();
-        foreach (PoolableObject obj in allObjectsInScene) {
-            if (obj.isActiveAndEnabled) {
+        foreach (PoolableObject obj in allObjectsInScene)
+        {
+            if (obj.isActiveAndEnabled)
+            {
                 obj.transform.position = _SlopeEnd.transform.position;
             }
         }
@@ -312,19 +353,23 @@ public class GameMaster : Singleton<GameMaster>, ISystem {
 
     //Velocity Test
     [ContextMenu("InvokeEvent")]
-    public void InvokeEvent() {
+    public void InvokeEvent()
+    {
         setVelocity(10);
-        
+
     }
-    
-    private void Update() {
-        if(points >= 1000 && !_levelOneControl && !_dead) {
+
+    private void Update()
+    {
+        if (points >= 1000 && !_levelOneControl && !_dead)
+        {
             _SpawnRateChangeInvoke.Invoke();
             velocity = velocityLevelTwo;
             _SpeedChangeEvent.Invoke();
             _levelOneControl = true;
         }
-        if (points >= 2000 && !_levelTwoControl && !_dead) {
+        if (points >= 2000 && !_levelTwoControl && !_dead)
+        {
             _SpawnRateChangeInvoke.Invoke();
             velocity = velocityLevelThree;
             _SpeedChangeEvent.Invoke();
