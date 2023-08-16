@@ -13,7 +13,7 @@ public class InputManager : MonoBehaviour
     private float _Velocity;
 
 
-    private int direction = 1;//1 = left, -1 = right
+    private int _direction = 1;//1 = left, -1 = right
 
     private void Awake()
     {
@@ -40,20 +40,19 @@ public class InputManager : MonoBehaviour
         if (moveVector.x < 0)
         {
             rb.transform.position -= new Vector3(_Velocity * Time.deltaTime, 0, 0);
-            if (direction == -1)
+            if (_direction == -1)
             {
-                direction = 1;
-                rb.transform.localScale = new Vector3(direction, 1, 1);
+                _direction = 1;
+                rb.transform.localScale = new Vector3(_direction, 1, 1);
             }
         }
         else if (moveVector.x > 0)
         {
             rb.transform.position += new Vector3(_Velocity * Time.deltaTime, 0, 0);
-            //flip the object rb
-            if (direction == 1)
+            if (_direction == 1)
             {
-                direction = -1;
-                rb.transform.localScale = new Vector3(direction, 1, 1);
+                _direction = -1;
+                rb.transform.localScale = new Vector3(_direction, 1, 1);
             }
         }
     }
