@@ -15,7 +15,10 @@ public class SpawnAvalanche : MonoBehaviour {
     [SerializeField]
     private float _EndingSecondsForSpawn; // The ending time interval for avalanche spawning.
 
-    private bool _IsAvalancheSpawned; // Indicates whether an avalanche is currently spawned.
+    [SerializeField]
+    private GameObject _WarningUIPrefab; // The prefab for the warning UI.
+    [SerializeField]
+    private float _WarningUIDisplayTime; // The time for which the warning UI is displayed.
 
     private void Start() {
         StartCoroutine(SpawnAvalancheRoutine(_StartingSecondsForSpawn, _EndingSecondsForSpawn));
@@ -30,7 +33,21 @@ public class SpawnAvalanche : MonoBehaviour {
             yield return new WaitForSeconds(randomTimeForSpawn);
 
             // Instantiate an avalanche at the spawn point.
-            GameObject avalanche = Instantiate(_AvalanchePrefab, _AvalancheSpawnPoint.transform.position, Quaternion.identity);
+            Instantiate(_AvalanchePrefab, _AvalancheSpawnPoint.transform.position, Quaternion.identity);
+            GameObject warningUI = Instantiate(_WarningUIPrefab);
+            warningUI.GetComponentInChildren<CanvasGroup>().alpha = 0.0f;
+            for (int i=0; i<5; i++) {
+                warningUI.GetComponentInChildren<CanvasGroup>().alpha += 0.2f;
+                yield return new WaitForSeconds(0.1f);
+            }
+            
+            yield return new WaitForSeconds(_WarningUIDisplayTime);
+            for (int i = 0; i < 5; i++) {
+                warningUI.GetComponentInChildren<CanvasGroup>().alpha -= 0.2f;
+                yield return new WaitForSeconds(0.1f);
+            }
+            Destroy(warningUI);
+
         }
     }
 }
