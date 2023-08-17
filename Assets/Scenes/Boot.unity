@@ -178,14 +178,30 @@ PrefabInstance:
       propertyPath: _Priority
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1274629024207578292, guid: be6233ca352028b498c46ff4554ae1f2, type: 3}
+      propertyPath: _ProviderList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274629024207578292, guid: be6233ca352028b498c46ff4554ae1f2, type: 3}
+      propertyPath: _ProviderList.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1274629024207578293, guid: be6233ca352028b498c46ff4554ae1f2, type: 3}
       propertyPath: m_Name
       value: PlayerController
       objectReference: {fileID: 0}
     - target: {fileID: 1274629024207578293, guid: be6233ca352028b498c46ff4554ae1f2, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3325560725760558751, guid: be6233ca352028b498c46ff4554ae1f2, type: 3}
+      propertyPath: _Touch
+      value: 
+      objectReference: {fileID: -3764159253890240871, guid: 603210b211763fe47aab4510058109ab, type: 3}
+    - target: {fileID: 3325560725760558751, guid: be6233ca352028b498c46ff4554ae1f2, type: 3}
+      propertyPath: _StopTouch
+      value: 
+      objectReference: {fileID: -4829960836713573644, guid: 603210b211763fe47aab4510058109ab, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be6233ca352028b498c46ff4554ae1f2, type: 3}
 --- !u!1 &273225831

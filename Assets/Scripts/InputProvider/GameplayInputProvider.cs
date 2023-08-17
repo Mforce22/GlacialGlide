@@ -6,43 +6,31 @@ using UnityEngine.InputSystem;
 public class GameplayInputProvider : InputProvider
 {
     #region Delegate
-    public OnFloatDelegate OnMove;
-    public OnVoidDelegate OnJump;
+    public OnFloatDelegate OnTouch;
     #endregion
 
     [Header("Gameplay")]
     [SerializeField]
-    private InputActionReference _Move;
+    private InputActionReference _Touch;
 
-    [SerializeField]
-    private InputActionReference _Jump;
 
     private void OnEnable()
     {
-        _Move.action.Enable();
-        _Jump.action.Enable();
+        _Touch.action.Enable();
 
-        _Move.action.performed += MovePerfomed;
-        _Jump.action.performed += JumpPerfomed;
+        _Touch.action.performed += MovePerfomed;
     }
 
     private void OnDisable()
     {
-        _Move.action.Disable();
-        _Jump.action.Disable();
+        _Touch.action.Disable();
 
-        _Move.action.performed -= MovePerfomed;
-        _Jump.action.performed -= JumpPerfomed;
+        _Touch.action.performed -= MovePerfomed;
     }
 
     private void MovePerfomed(InputAction.CallbackContext obj)
     {
         float value = obj.action.ReadValue<float>();
-        OnMove?.Invoke(value);
-    }
-
-    private void JumpPerfomed(InputAction.CallbackContext obj)
-    {
-        OnJump?.Invoke();
+        OnTouch?.Invoke(value);
     }
 }
