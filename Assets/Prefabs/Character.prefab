@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 1729128227}
   - component: {fileID: 1729128225}
   - component: {fileID: 3027967892419708558}
+  - component: {fileID: 1729128224}
   m_Layer: 6
   m_Name: Character
   m_TagString: Untagged
@@ -174,7 +175,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7973410841093241977}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 952cfb5796cc3494e9c6f23eae2b23e4, type: 3}
   m_Name: 
@@ -220,3 +221,16 @@ PolygonCollider2D:
       - {x: 0.35461897, y: -0.26142913}
       - {x: 0.090021655, y: -0.18611145}
       - {x: 0.050186336, y: 0.015792698}
+--- !u!114 &1729128224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7973410841093241977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de3bae314ac2a464b8b595fadb1379b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Velocity: 2
