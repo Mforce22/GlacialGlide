@@ -49,7 +49,7 @@ public partial class @PlayerTouchController: IInputActionCollection2, IDisposabl
                     ""name"": ""EndContact"",
                     ""type"": ""PassThrough"",
                     ""id"": ""c892dd85-4fb8-4423-acdf-7672b3399d28"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": ""Touch"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -60,6 +60,28 @@ public partial class @PlayerTouchController: IInputActionCollection2, IDisposabl
                     ""name"": """",
                     ""id"": ""39353c30-cc7d-4657-bd3d-51f4acf5ee63"",
                     ""path"": ""<Touchscreen>/primaryTouch/press"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PrimaryContact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""96f9b2d2-cdd2-4fc1-9263-c4d156377167"",
+                    ""path"": ""<Touchscreen>/touch1/press"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PrimaryContact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""69ea8c06-c487-460a-bddd-69b4bd316c31"",
+                    ""path"": ""<Touchscreen>/touch2/press"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": """",

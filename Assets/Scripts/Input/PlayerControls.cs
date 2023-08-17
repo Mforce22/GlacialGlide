@@ -40,8 +40,8 @@ public class PlayerControls : InputProvider
 
     private void Start()
     {
-        // _playerTouchController.Touch.PrimaryContact.started += ctx => StartTouchPrimary(ctx);
-        // _playerTouchController.Touch.PrimaryContact.canceled += ctx => EndTouchPrimary(ctx);
+        //_playerTouchController.Touch.PrimaryContact.started += ctx => StartTouchPrimary(ctx);
+        //_playerTouchController.Touch.PrimaryContact.canceled += ctx => EndTouchPrimary(ctx);
     }
 
     private void StartTouchPrimary(InputAction.CallbackContext ctx)
