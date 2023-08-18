@@ -93,9 +93,14 @@ public class CharacterController : MonoBehaviour
                 transform.localScale = new Vector3(_direction, 1, 1);
             }
         }
-        _isMoving = true;
+        //_isMoving = true;
         //Debug.LogFormat("Value: {0}", value);
 
+        if (transform.position.x > 4f || transform.position.x < -4f)
+        {
+            transform.position = new Vector3(-transform.position.x, transform.position.y, transform.position.z);
+        }
     }
+
 
 }
