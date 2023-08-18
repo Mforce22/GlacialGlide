@@ -7,10 +7,10 @@ using UnityEngine;
 public class CharacterController : MonoBehaviour
 {
     [SerializeField]
+    private GameEvent _pauseEvent;
+
+    [SerializeField]
     private IdContainer _IdProvider;
-
-
-
 
     [SerializeField]
     private float _Velocity;
@@ -25,10 +25,14 @@ public class CharacterController : MonoBehaviour
     private Vector3 _movement;
     private bool _isMoving = false;
 
+    private bool _isPaused = false;
+
     private void Awake()
     {
         _gameplayInputProvider = PlayerController.Instance.GetInput<PlayerControls>(_IdProvider.Id);
         _playerTouchController = new PlayerTouchController();
+
+
     }
 
     private void OnEnable()
@@ -37,17 +41,21 @@ public class CharacterController : MonoBehaviour
 
         _gameplayInputProvider.OnTouch += StartMoving;
         _gameplayInputProvider.OnStopTouch += StopMoving;
+
+        _pauseEvent.Subscribe(Pause);
     }
     private void OnDisable()
     {
         _playerTouchController.Disable();
         _gameplayInputProvider.OnTouch -= StartMoving;
         _gameplayInputProvider.OnStopTouch -= StopMoving;
+
+        _pauseEvent.Unsubscribe(Pause);
     }
 
     private void Update()
     {
-        if (_isMoving)
+        if (_isMoving && !_isPaused)
         {
             MoveCharacter();
         }
@@ -102,5 +110,10 @@ public class CharacterController : MonoBehaviour
         }
     }
 
+
+    private void Pause(GameEvent evt)
+    {
+        _isPaused = GameMaster.Instance.getPause();
+    }
 
 }
