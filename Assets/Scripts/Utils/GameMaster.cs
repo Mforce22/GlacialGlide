@@ -68,6 +68,10 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     [SerializeField]
     private GameEvent _SpawnRateChangeInvoke;
 
+    [Tooltip("Event to invoke when the pause state has changed")]
+    [SerializeField]
+    private GameEvent _PauseEvent;
+
     #endregion
 
     #region variables
@@ -139,6 +143,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     public void setPause(bool paused)
     {
         isPaused = paused;
+        _PauseEvent.Invoke();
     }
     public bool getPause()
     {

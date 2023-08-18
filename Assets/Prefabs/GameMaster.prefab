@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14116bcd34bd89f459286cf8a9d6496e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Priority: 1
+  _Priority: 15
   _SpeedChangeEvent: {fileID: 11400000, guid: e258b91dbda03e34aa3af0083fa80525, type: 2}
   _ShieldHitEvent: {fileID: 11400000, guid: 208ee963d0b2ac64d80be1453c70e3d6, type: 2}
   _HeartTakenEvent: {fileID: 11400000, guid: ced15e19e974abe47a2dd801318dfa2f, type: 2}
@@ -58,13 +58,18 @@ MonoBehaviour:
   _SmallRampExitEvent: {fileID: 11400000, guid: c91e308b0cd534f4e969d596d1dbb170, type: 2}
   _MediumRampExitEvent: {fileID: 11400000, guid: ddf10f6a108243e49b851492940f3c3b, type: 2}
   _HardRampExitEvent: {fileID: 11400000, guid: 70486ec3ed79b8e448aa01b05f8e374c, type: 2}
+  _SpawnRateChangeInvoke: {fileID: 11400000, guid: 31a61d097cba22842810a2eab4091d9a, type: 2}
+  _PauseEvent: {fileID: 11400000, guid: 5b839b021bf7c9f49b777b80ddc80b95, type: 2}
   velocity: 2
+  velocityLevelTwo: 3
+  velocityLevelThree: 4
   isPaused: 0
   hearts: 3
   points: 0
   _hasShield: 0
-  _DeathViewPrefab: {fileID: 0}
-  _SlopeEnd: {fileID: 0}
+  _DeathViewPrefab: {fileID: 4830035029626575163, guid: 6fd63cd9126f9334a966f9086f09939a, type: 3}
+  _SlopeEnd: {fileID: 4783415839181879176, guid: aaa95719e694648448a253a5aad063d4, type: 3}
+  _X2MultiplierPrefab: {fileID: 5611292664392235912, guid: e554395524407494892870e17fcef9c5, type: 3}
 --- !u!114 &6572662449265364999
 MonoBehaviour:
   m_ObjectHideFlags: 0

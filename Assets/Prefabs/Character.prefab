@@ -191,5 +191,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa944bfbbbf5c7b439be9684edb4e633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pauseEvent: {fileID: 11400000, guid: 5b839b021bf7c9f49b777b80ddc80b95, type: 2}
   _IdProvider: {fileID: 11400000, guid: 7d73e21dc2253964883cdb4d2260a89f, type: 2}
   _Velocity: 2
