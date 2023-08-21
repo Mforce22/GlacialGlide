@@ -22,6 +22,10 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     [SerializeField]
     private GameEvent _ShieldHitEvent;
 
+    [Tooltip("Event called when the player lose a shield")]
+    [SerializeField]
+    private GameEvent _ShieldRemovedEvent;
+
     [Tooltip("Event listened when the player take a heart")]
     [SerializeField]
     private GameEvent _HeartTakenEvent;
@@ -268,6 +272,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         if (_hasShield)
         {
             _hasShield = false;
+            _ShieldRemovedEvent.Invoke();
         }
         else
         {
