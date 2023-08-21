@@ -72,6 +72,14 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     [SerializeField]
     private GameEvent _PauseEvent;
 
+    [Tooltip("Event invoked when the jump is completed with success")]
+    [SerializeField]
+    private GameEvent _JumpCompleted;
+
+    [Tooltip("Event invoked when the jump is failed")]
+    [SerializeField]
+    private GameEvent _JumpFailed;
+
     #endregion
 
     #region variables
