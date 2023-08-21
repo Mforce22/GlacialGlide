@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 7662951201642041304}
   - component: {fileID: 3660097970962572142}
   m_Layer: 0
-  m_Name: Scudo
+  m_Name: Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,7 +156,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 5c5762abab68afd458551b0402baf22e, type: 3}
   m_Color: {r: 0, g: 0.67058825, b: 1, a: 1}
   m_FlipX: 0
@@ -180,6 +180,7 @@ GameObject:
   - component: {fileID: 1729128226}
   - component: {fileID: 3027967892419708558}
   - component: {fileID: 1729128224}
+  - component: {fileID: 8928456132712354635}
   m_Layer: 6
   m_Name: Character
   m_TagString: Untagged
@@ -279,3 +280,18 @@ MonoBehaviour:
   _pauseEvent: {fileID: 11400000, guid: 5b839b021bf7c9f49b777b80ddc80b95, type: 2}
   _IdProvider: {fileID: 11400000, guid: 7d73e21dc2253964883cdb4d2260a89f, type: 2}
   _Velocity: 2
+--- !u!114 &8928456132712354635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7973410841093241977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb4799f556ff82478fc34361ff81b0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shield: {fileID: 6831859730891467706}
+  _onShieldTaken: {fileID: 11400000, guid: 208ee963d0b2ac64d80be1453c70e3d6, type: 2}
+  _onShieldRemoved: {fileID: 11400000, guid: 580823d655e5d8a4b9ce8e333144e80f, type: 2}
