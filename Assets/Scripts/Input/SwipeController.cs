@@ -10,6 +10,13 @@ public class SwipeController : MonoBehaviour
     [SerializeField]
     private GameEvent _pauseEvent;
 
+    [SerializeField]
+    private GameEvent _jumpStartEvent;
+
+    [SerializeField]
+    private GameObject _minigamePrefab;
+
+
     [Header("Swipe Settings")]
     [SerializeField]
     private float _swipeDistance;
@@ -77,7 +84,15 @@ public class SwipeController : MonoBehaviour
             bool check = CheckSwipe();
             if (check)
             {
-                //Debug.Log("Swipe Detected");
+                bool canJump = GameMaster.Instance.canJump();
+                if (canJump)
+                {
+                    //instantiate the prefab
+                    Instantiate(_minigamePrefab);
+                    _jumpStartEvent.Invoke();
+                }
+                else
+                    Debug.Log("Can't Jump");
             }
         }
     }

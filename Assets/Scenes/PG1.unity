@@ -653,6 +653,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _IdProvider: {fileID: 11400000, guid: 7d73e21dc2253964883cdb4d2260a89f, type: 2}
   _pauseEvent: {fileID: 11400000, guid: 5b839b021bf7c9f49b777b80ddc80b95, type: 2}
+  _jumpStartEvent: {fileID: 11400000, guid: ce3a6bda41ce8e94f95e1a861bbb8d61, type: 2}
+  _minigamePrefab: {fileID: 7371842466267966083, guid: c81121d4426abd641af1d871394605e7, type: 3}
   _swipeDistance: 0.2
   _maxSwipeTime: 1
   _directionTreshold: 0.9
