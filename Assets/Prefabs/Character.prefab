@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 3027967892419708558}
   - component: {fileID: 1729128224}
   - component: {fileID: 8928456132712354635}
+  - component: {fileID: 1295631520869749306}
   m_Layer: 6
   m_Name: Character
   m_TagString: Untagged
@@ -280,6 +281,9 @@ MonoBehaviour:
   _pauseEvent: {fileID: 11400000, guid: 5b839b021bf7c9f49b777b80ddc80b95, type: 2}
   _IdProvider: {fileID: 11400000, guid: 7d73e21dc2253964883cdb4d2260a89f, type: 2}
   _Velocity: 2
+  _jumpStart: {fileID: 11400000, guid: ce3a6bda41ce8e94f95e1a861bbb8d61, type: 2}
+  _jumpCompleted: {fileID: 11400000, guid: 02dc2645433ea654ca13bd626eaa895e, type: 2}
+  _jumpFailed: {fileID: 11400000, guid: 54081b4457777b14a910c394e03086d0, type: 2}
 --- !u!114 &8928456132712354635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,3 +299,22 @@ MonoBehaviour:
   _shield: {fileID: 6831859730891467706}
   _onShieldTaken: {fileID: 11400000, guid: 208ee963d0b2ac64d80be1453c70e3d6, type: 2}
   _onShieldRemoved: {fileID: 11400000, guid: 580823d655e5d8a4b9ce8e333144e80f, type: 2}
+--- !u!114 &1295631520869749306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7973410841093241977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5797f27e3f06e4d43b0354faaa97063e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _IdProvider: {fileID: 11400000, guid: 7d73e21dc2253964883cdb4d2260a89f, type: 2}
+  _pauseEvent: {fileID: 11400000, guid: 5b839b021bf7c9f49b777b80ddc80b95, type: 2}
+  _jumpStartEvent: {fileID: 11400000, guid: ce3a6bda41ce8e94f95e1a861bbb8d61, type: 2}
+  _minigamePrefab: {fileID: 7371842466267966083, guid: c81121d4426abd641af1d871394605e7, type: 3}
+  _swipeDistance: 0.2
+  _maxSwipeTime: 1
+  _directionTreshold: 0.9

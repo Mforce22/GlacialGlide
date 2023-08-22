@@ -15,6 +15,18 @@ public class CharacterController : MonoBehaviour
     [SerializeField]
     private float _Velocity;
 
+    [Tooltip("Event invoked when the jump is started")]
+    [SerializeField]
+    private GameEvent _jumpStart;
+
+    [Tooltip("Event invoked when the jump is completed with success")]
+    [SerializeField]
+    private GameEvent _jumpCompleted;
+
+    [Tooltip("Event invoked when the jump is failed")]
+    [SerializeField]
+    private GameEvent _jumpFailed;
+
 
     private int _direction = 1;//1 = left, -1 = right
 
@@ -24,7 +36,7 @@ public class CharacterController : MonoBehaviour
 
     private Vector3 _movement;
     private bool _isMoving = false;
-
+    private bool _isJumping = false;
     private bool _isPaused = false;
 
     private void Awake()
@@ -43,6 +55,9 @@ public class CharacterController : MonoBehaviour
         _gameplayInputProvider.OnStopTouch += StopMoving;
 
         _pauseEvent.Subscribe(Pause);
+        _jumpStart.Subscribe(JumpStarted);
+        _jumpCompleted.Subscribe(JumpFinished);
+        _jumpFailed.Subscribe(JumpFinished);
     }
     private void OnDisable()
     {
@@ -51,11 +66,14 @@ public class CharacterController : MonoBehaviour
         _gameplayInputProvider.OnStopTouch -= StopMoving;
 
         _pauseEvent.Unsubscribe(Pause);
+        _jumpStart.Unsubscribe(JumpStarted);
+        _jumpCompleted.Unsubscribe(JumpFinished);
+        _jumpFailed.Unsubscribe(JumpFinished);
     }
 
     private void Update()
     {
-        if (_isMoving && !_isPaused)
+        if (_isMoving && !_isPaused && !_isJumping)
         {
             MoveCharacter();
         }
@@ -69,11 +87,19 @@ public class CharacterController : MonoBehaviour
     private void StopMoving()
     {
         _isMoving = false;
+        // Touch touch = Input.GetTouch(Input.touchCount - 1);
+        // Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
+
+        // Debug.LogFormat("Touch Position End: {0}", touchPosition);
     }
 
     private void StartMoving()
     {
         _isMoving = true;
+        // Touch touch = Input.GetTouch(Input.touchCount - 1);
+        // Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
+
+        // Debug.LogFormat("Touch Position: {0}", touchPosition);
     }
 
     private void MoveCharacter()
@@ -116,4 +142,17 @@ public class CharacterController : MonoBehaviour
         _isPaused = GameMaster.Instance.getPause();
     }
 
+    private void JumpStarted(GameEvent evt)
+    {
+        _isJumping = true;
+        //set collision layer
+        gameObject.layer = 3;
+    }
+
+    private void JumpFinished(GameEvent evt)
+    {
+        _isJumping = false;
+        //set collision layer
+        gameObject.layer = 6;
+    }
 }

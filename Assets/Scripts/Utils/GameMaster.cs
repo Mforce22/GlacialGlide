@@ -76,6 +76,10 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     [SerializeField]
     private GameEvent _PauseEvent;
 
+    [Tooltip("Event invoked when the jump is started")]
+    [SerializeField]
+    private GameEvent _JumpStart;
+
     [Tooltip("Event invoked when the jump is completed with success")]
     [SerializeField]
     private GameEvent _JumpCompleted;
@@ -136,6 +140,8 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     private bool _levelTwoControl = false;
     private bool _dead = false;
 
+    private int _jumpPerformed = 0;//1 = easy, 2 = medium, 3 = hard
+
     [SerializeField]
     private GameObject _X2MultiplierPrefab;
     private GameObject _X2Multiplier;
@@ -193,6 +199,15 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     {
         return _multiplierTimer;
     }
+
+    public bool canJump()
+    {
+        if (_canEasyJump || _canMediumJump || _canHardJump)
+        {
+            return true;
+        }
+        return false;
+    }
     #endregion
 
     public void Setup()
@@ -209,6 +224,9 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         _SmallRampExitEvent.Subscribe(EasyRampExit);
         _MediumRampExitEvent.Subscribe(MediumRampExit);
         _HardRampExitEvent.Subscribe(HardRampExit);
+        _JumpStart.Subscribe(JumpStart);
+        _JumpCompleted.Subscribe(JumpCompleted);
+        _JumpFailed.Subscribe(JumpFailed);
 
         SystemCoordinator.Instance.FinishSystemSetup(this);
     }
@@ -226,6 +244,9 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         _SmallRampExitEvent.Unsubscribe(EasyRampExit);
         _MediumRampExitEvent.Unsubscribe(MediumRampExit);
         _HardRampExitEvent.Unsubscribe(HardRampExit);
+        _JumpStart.Unsubscribe(JumpStart);
+        _JumpCompleted.Unsubscribe(JumpCompleted);
+        _JumpFailed.Unsubscribe(JumpFailed);
     }
 
     //used for testing
@@ -393,5 +414,48 @@ public class GameMaster : Singleton<GameMaster>, ISystem
             _SpeedChangeEvent.Invoke();
             _levelTwoControl = true;
         }
+    }
+
+    private void JumpStart(GameEvent evt)
+    {
+        if (_canEasyJump)
+        {
+            _jumpPerformed = 1;
+        }
+        else if (_canMediumJump)
+        {
+            _jumpPerformed = 2;
+        }
+        else if (_canHardJump)
+        {
+            _jumpPerformed = 3;
+        }
+    }
+
+    private void JumpCompleted(GameEvent evt)
+    {
+        float jumpPoint = 0f;
+
+        if (_jumpPerformed == 1)
+        {
+            jumpPoint = 300f;
+        }
+        else if (_jumpPerformed == 2)
+        {
+            jumpPoint = 600f;
+        }
+        else if (_jumpPerformed == 3)
+        {
+            jumpPoint = 1000f;
+        }
+
+        _jumpPerformed = 0;
+        setPoints(points + ((int)jumpPoint * _multiplier));
+    }
+
+    private void JumpFailed(GameEvent evt)
+    {
+        _jumpPerformed = 0;
+        DamageTaken(evt);
     }
 }
