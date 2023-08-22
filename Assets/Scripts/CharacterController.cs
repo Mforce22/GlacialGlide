@@ -69,11 +69,19 @@ public class CharacterController : MonoBehaviour
     private void StopMoving()
     {
         _isMoving = false;
+        // Touch touch = Input.GetTouch(Input.touchCount - 1);
+        // Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
+
+        // Debug.LogFormat("Touch Position End: {0}", touchPosition);
     }
 
     private void StartMoving()
     {
         _isMoving = true;
+        // Touch touch = Input.GetTouch(Input.touchCount - 1);
+        // Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
+
+        // Debug.LogFormat("Touch Position: {0}", touchPosition);
     }
 
     private void MoveCharacter()
