@@ -17,7 +17,7 @@ public class JumpViewController : MonoBehaviour
     [SerializeField]
     private GameObject _RedCircle;
 
-    private Vector3 _scale = new Vector3(0.04f, 0.04f, 0);
+    private Vector3 _vect = new Vector3(0.04f, 0.04f, 0);
     #endregion
 
     private void Start()
@@ -29,9 +29,16 @@ public class JumpViewController : MonoBehaviour
     {
         while (_RedCircle.transform.localScale.x >= 0.5f)
         {
-            _RedCircle.transform.localScale = _RedCircle.transform.localScale - _scale;
-            //Debug.Log("Scale reduced by 0.04");
-            yield return new WaitForSeconds(0.1f);
+            _RedCircle.transform.localScale = _RedCircle.transform.localScale - _vect;
+            if (GameMaster.Instance.getEasyJump()) {
+                yield return new WaitForSeconds(0.1f);
+            }
+            else if(GameMaster.Instance.getMediumJump()) {
+                yield return new WaitForSeconds(0.08f);
+            }
+            else if (GameMaster.Instance.getHardJump()) {
+                yield return new WaitForSeconds(0.06f);
+            }
         }
         Debug.Log("JUMP FAILED");
         _JumpFailed.Invoke();

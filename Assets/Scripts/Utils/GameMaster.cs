@@ -208,6 +208,18 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         }
         return false;
     }
+
+    public bool getEasyJump() {
+        return _canEasyJump;
+    }
+
+    public bool getMediumJump() {
+        return _canMediumJump;
+    }
+
+    public bool getHardJump() {
+        return _canHardJump;
+    }
     #endregion
 
     public void Setup()
