@@ -65,7 +65,7 @@ public class CharacterController : MonoBehaviour {
     }
 
     private void Update() {
-        if (_isMoving && !_isPaused && !_isJumping) {
+        if (_isMoving && !_isPaused && !_isJumping && Input.touchCount > 0) {
             MoveCharacter();
         }
 

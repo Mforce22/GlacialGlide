@@ -111,7 +111,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem {
 
     [SerializeField]
     [Tooltip("Point of incremental velocity")]
-    private float _SpanPoint;
+    private int _SpanPoint;
 
     [SerializeField]
     [Tooltip("Is the game paused?")]
@@ -124,6 +124,8 @@ public class GameMaster : Singleton<GameMaster>, ISystem {
     [SerializeField]
     [Tooltip("Player points")]
     private int points;
+
+    private int _TMPPoints;
 
     [SerializeField]
     [Tooltip("If The Player has a shield")]
@@ -146,7 +148,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem {
     private bool _canHardJump = false;
 
     private bool _Dead = false;
-    private bool _SpeedChangeController = false;
+    private bool _SpeedChangeController = true;
 
     private int _jumpPerformed = 0;//1 = easy, 2 = medium, 3 = hard
 
@@ -235,6 +237,8 @@ public class GameMaster : Singleton<GameMaster>, ISystem {
         _JumpStart.Subscribe(JumpStart);
         _JumpCompleted.Subscribe(JumpCompleted);
         _JumpFailed.Subscribe(JumpFailed);
+
+        _TMPPoints = _SpanPoint;
 
         SystemCoordinator.Instance.FinishSystemSetup(this);
     }
@@ -387,13 +391,14 @@ public class GameMaster : Singleton<GameMaster>, ISystem {
     }
 
     private void Update() {
-        if (((points % _SpanPoint) == 0) && !_Dead && !_SpeedChangeController && points != 0) {
+        if(points > _TMPPoints) {
+            _TMPPoints = _TMPPoints + _SpanPoint;
+            _SpeedChangeController = false;
+        }
+        if (!_Dead && !_SpeedChangeController && points != 0) {
             _SpawnRateChangeInvoke.Invoke();
             setVelocity(_Velocity + _IncVelocity);
             _SpeedChangeController = true;
-        }
-        if (points % _SpanPoint != 0) {
-            _SpeedChangeController = false;
         }
     }
 
