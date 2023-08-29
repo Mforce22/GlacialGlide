@@ -19,6 +19,7 @@ public class DeathViewController : MonoBehaviour {
 
         // Pause the game upon death.
         GameMaster.Instance.setPause(true);
+        AudioSystem.Instance.StopMusic();
     }
 
     /// <summary>
@@ -32,8 +33,7 @@ public class DeathViewController : MonoBehaviour {
         GameMaster.Instance.setPoints(0);
         GameMaster.Instance.setVelocity(2.0f);
 
-        // Stop playing background music and load the specified scene.
-        AudioSystem.Instance.StopMusic();
+        // Load the specified scene.
         TravelSystem.Instance.SceneLoad(scene);
     }
 }
