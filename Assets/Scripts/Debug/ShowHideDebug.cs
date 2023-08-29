@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ShowHideDebug : MonoBehaviour
-{
+public class ShowHideDebug : MonoBehaviour {
     public ViewController DebugView;
     public IdContainer DebugViedId;
 

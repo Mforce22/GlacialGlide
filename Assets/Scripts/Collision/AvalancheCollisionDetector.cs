@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class AvalancheCollisionDetector : MonoBehaviour
-{
+public class AvalancheCollisionDetector : MonoBehaviour {
 
     [Header("Events")]
     [Tooltip("Event to invoke when the object hit the player")]
@@ -16,8 +13,7 @@ public class AvalancheCollisionDetector : MonoBehaviour
     [SerializeField]
     private IdContainer _idPoolManager;
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
+    private void OnTriggerEnter2D(Collider2D other) {
         Debug.Log("Trigger detected " + gameObject.name);
         _EventToInvoke.Invoke();
         _EventToInvoke.Invoke();//avalanche do 2 damage

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -7,8 +5,7 @@ using UnityEngine;
 /// This class manages the user interface for the death view and handles scene transitions upon player death.
 /// It should be attached to a GameObject as a MonoBehaviour script.
 /// </summary>
-public class DeathViewController : MonoBehaviour
-{
+public class DeathViewController : MonoBehaviour {
     [SerializeField]
     private int _Points; // The current points earned by the player.
 
@@ -33,7 +30,7 @@ public class DeathViewController : MonoBehaviour
         GameMaster.Instance.setHearts(3);
         GameMaster.Instance.setPause(false);
         GameMaster.Instance.setPoints(0);
-        GameMaster.Instance.setVelocity(2);
+        GameMaster.Instance.setVelocity(2.0f);
 
         // Stop playing background music and load the specified scene.
         AudioSystem.Instance.StopMusic();

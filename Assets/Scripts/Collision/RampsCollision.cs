@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class RampsCollision : MonoBehaviour
-{
+public class RampsCollision : MonoBehaviour {
     [Header("Ramp Events")]
     [Tooltip("Event invoked when the player enter a ramp")]
     [SerializeField]
@@ -15,14 +12,12 @@ public class RampsCollision : MonoBehaviour
 
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
+    private void OnTriggerEnter2D(Collider2D collision) {
         Debug.Log($"{gameObject.name} collided with {collision.gameObject.name}");
         _RampEnterEvent?.Invoke();
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
+    private void OnTriggerExit2D(Collider2D collision) {
         Debug.Log($"{gameObject.name} exited collision with {collision.gameObject.name}");
         _RampExitEvent?.Invoke();
     }
