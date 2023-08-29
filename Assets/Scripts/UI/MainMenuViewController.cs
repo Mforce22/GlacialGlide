@@ -8,9 +8,12 @@ public class MainMenuViewController : MonoBehaviour {
     private OptionsViewController _OptionsViewPrefab; // Prefab for the options view.
     [SerializeField]
     private CreditsViewController _CreditsViewPrefab; // Prefab for the credits view.
+    [SerializeField]
+    private HowToPlayViewController _HowToPlayViewPrefab; // Prefab for the credits view.
 
     private OptionsViewController _optionsViewController; // Reference to the instantiated options view.
     private CreditsViewController _creditsViewController; // Reference to the instantiated credits view.
+    private HowToPlayViewController _HowToPlayViewController;
 
     /// <summary>
     /// This method is called to change the game scene when a menu option is selected.
@@ -37,5 +40,10 @@ public class MainMenuViewController : MonoBehaviour {
         // Instantiate the credits view prefab if not already instantiated.
         if (_creditsViewController) return;
         _creditsViewController = Instantiate(_CreditsViewPrefab);
+    }
+
+    public void OpenHowToPlay() {
+        if (_HowToPlayViewController) return;
+        _HowToPlayViewController = Instantiate(_HowToPlayViewPrefab);
     }
 }
