@@ -11,6 +11,7 @@ public class Movement : MonoBehaviour {
 
     private void OnEnable() {
         _movement = GameMaster.Instance.getVelocity();
+        _ChangeSpeedEvent.Subscribe(SpeedChanged);
     }
 
     private void OnDisable() {
