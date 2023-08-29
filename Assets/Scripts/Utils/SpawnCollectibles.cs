@@ -14,6 +14,9 @@ public class SpawnCollectibles : MonoBehaviour {
     [SerializeField]
     [Tooltip("Seconds of spawn rate decrease")]
     private float SpawnRateDecrease;
+    [SerializeField]
+    [Tooltip("Minimum seconds of spawn rate")]
+    private float SpawnRateStopDecrease;
 
     [SerializeField]
     [Tooltip("Trees spawn rate")]
@@ -204,7 +207,7 @@ public class SpawnCollectibles : MonoBehaviour {
 
         GameObject objectWithTag = GameObject.FindWithTag("Ramp");
 
-        if(objectWithTag == null) {
+        if (objectWithTag == null) {
             int randomValue = Random.Range(0, 100);
             PoolableObject rampPrefab = null;
             PoolManager poolManager = null;
@@ -229,12 +232,15 @@ public class SpawnCollectibles : MonoBehaviour {
                 SpawnPoint.transform.position = new Vector3(0, SpawnPoint.transform.position.y, SpawnPoint.transform.position.z);
                 rampPrefab.transform.position = SpawnPoint.transform.position;
             }
-        }
-        else
+        } else
             Debug.Log("Ramp already spawned");
     }
 
     private void SpawnRateChange(GameEvent evt) {
-        this.SpawnRate -= SpawnRateDecrease;
+        if (this.SpawnRate >= SpawnRateStopDecrease) {
+            this.SpawnRate -= SpawnRateDecrease;
+        } else {
+            this.SpawnRate = SpawnRateStopDecrease;
+        }
     }
 }

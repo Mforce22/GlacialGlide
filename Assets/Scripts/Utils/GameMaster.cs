@@ -1,8 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class GameMaster : Singleton<GameMaster>, ISystem
-{
+public class GameMaster : Singleton<GameMaster>, ISystem {
     [Header("System Settings")]
 
     #region Priority
@@ -96,13 +95,15 @@ public class GameMaster : Singleton<GameMaster>, ISystem
 
     [SerializeField]
     [Tooltip("Starting velocity of the game")]
-    private int velocity;
+    private float _Velocity;
+
     [SerializeField]
-    [Tooltip("Second velocity of the game")]
-    private int velocityLevelTwo;
+    [Tooltip("Added incremental velocity ")]
+    private float _IncVelocity;
+
     [SerializeField]
-    [Tooltip("Third velocity of the game")]
-    private int velocityLevelThree;
+    [Tooltip("Point of incremental velocity")]
+    private float _SpanPoint;
 
     [SerializeField]
     [Tooltip("Is the game paused?")]
@@ -136,9 +137,8 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     private bool _canMediumJump = false;
     private bool _canHardJump = false;
 
-    private bool _levelOneControl = false;
-    private bool _levelTwoControl = false;
-    private bool _dead = false;
+    private bool _Dead = false;
+    private bool _SpeedChangeController = false;
 
     private int _jumpPerformed = 0;//1 = easy, 2 = medium, 3 = hard
 
@@ -148,62 +148,49 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     #endregion
 
     #region Setters&Getters
-    public void setVelocity(int _velocity)
-    {
-        velocity = _velocity;
+    public void setVelocity(float _velocity) {
+        _Velocity = _velocity;
         _SpeedChangeEvent.Invoke();
     }
-    public int getVelocity()
-    {
-        return velocity;
+    public float getVelocity() {
+        return _Velocity;
     }
 
-    public void setPause(bool paused)
-    {
+    public void setPause(bool paused) {
         isPaused = paused;
         _PauseEvent.Invoke();
     }
-    public bool getPause()
-    {
+    public bool getPause() {
         return isPaused;
     }
 
-    public void setHearts(int _hearts)
-    {
+    public void setHearts(int _hearts) {
         hearts = _hearts;
     }
-    public int getHearts()
-    {
+    public int getHearts() {
         return hearts;
     }
 
-    public void setPoints(int _points)
-    {
+    public void setPoints(int _points) {
         points = _points;
     }
-    public int getPoints()
-    {
+    public int getPoints() {
         return points;
     }
 
-    public void setDeath(bool _dead)
-    {
-        this._dead = _dead;
+    public void setDeath(bool _dead) {
+        this._Dead = _dead;
     }
-    public bool getDeath()
-    {
-        return _dead;
+    public bool getDeath() {
+        return _Dead;
     }
 
-    public int getMultiplierTimer()
-    {
+    public int getMultiplierTimer() {
         return _multiplierTimer;
     }
 
-    public bool canJump()
-    {
-        if (_canEasyJump || _canMediumJump || _canHardJump)
-        {
+    public bool canJump() {
+        if (_canEasyJump || _canMediumJump || _canHardJump) {
             return true;
         }
         return false;
@@ -222,8 +209,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     }
     #endregion
 
-    public void Setup()
-    {
+    public void Setup() {
         //subscibe to the event
         _ShieldHitEvent.Subscribe(ShieldHit);
         _HeartTakenEvent.Subscribe(HeartTaken);
@@ -243,8 +229,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         SystemCoordinator.Instance.FinishSystemSetup(this);
     }
 
-    private void OnDisable()
-    {
+    private void OnDisable() {
         _ShieldHitEvent.Unsubscribe(ShieldHit);
         _HeartTakenEvent.Unsubscribe(HeartTaken);
         _CoinTakenEvent.Unsubscribe(CoinTaken);
@@ -273,73 +258,57 @@ public class GameMaster : Singleton<GameMaster>, ISystem
 
 
     //Event handler
-    void ShieldHit(GameEvent evt)
-    {
+    void ShieldHit(GameEvent evt) {
         Debug.Log("Shield gained");
-        if (!_hasShield)
-        {
+        if (!_hasShield) {
             _hasShield = true;
         }
     }
 
-    void HeartTaken(GameEvent evt)
-    {
+    void HeartTaken(GameEvent evt) {
         Debug.Log("Heart taken");
 
-        if (hearts < 3)
-        {
+        if (hearts < 3) {
             hearts++;
         }
         //hearts++;
     }
 
-    void CoinTaken(GameEvent evt)
-    {
+    void CoinTaken(GameEvent evt) {
         Debug.Log("Coin taken");
         setPoints(points + (100 * _multiplier));
     }
 
-    void DamageTaken(GameEvent evt)
-    {
+    void DamageTaken(GameEvent evt) {
         Debug.Log("Damage taken");
-        if (_hasShield)
-        {
+        if (_hasShield) {
             _hasShield = false;
             _ShieldRemovedEvent.Invoke();
-        }
-        else
-        {
+        } else {
             setHearts(hearts - 1);
-            if (hearts <= 0)
-            {
+            if (hearts <= 0) {
                 //game over
                 GameOver();
             }
         }
     }
 
-    void X2Taken(GameEvent evt)
-    {
+    void X2Taken(GameEvent evt) {
         if (_X2Multiplier == null)
             _X2Multiplier = Instantiate(_X2MultiplierPrefab);
         Debug.Log("X2 taken");
-        if (_multiplier == 1)
-        {
+        if (_multiplier == 1) {
             _multiplier++;
             //Debug.Log("Multiplier taken ");
             _multiplierTimer = 10;
             StartCoroutine(ResetMultiplier());
-        }
-        else
-        {
+        } else {
             _multiplierTimer += 10;
         }
     }
 
-    private IEnumerator ResetMultiplier()
-    {
-        while (_multiplierTimer > 0)
-        {
+    private IEnumerator ResetMultiplier() {
+        while (_multiplierTimer > 0) {
             yield return new WaitForSeconds(1);
             _multiplierTimer--;
             //Debug.Log("Multiplier timer: " + _multiplierTimer);
@@ -351,113 +320,75 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     }
 
     #region Ramp Events
-    public void EasyRampEnter(GameEvent evt)
-    {
+    public void EasyRampEnter(GameEvent evt) {
         _canEasyJump = true;
     }
-    public void EasyRampExit(GameEvent evt)
-    {
+    public void EasyRampExit(GameEvent evt) {
         _canEasyJump = false;
     }
 
-    public void MediumRampEnter(GameEvent evt)
-    {
+    public void MediumRampEnter(GameEvent evt) {
         _canMediumJump = true;
     }
-    public void MediumRampExit(GameEvent evt)
-    {
+    public void MediumRampExit(GameEvent evt) {
         _canMediumJump = false;
     }
 
-    public void HardRampEnter(GameEvent evt)
-    {
+    public void HardRampEnter(GameEvent evt) {
         _canHardJump = true;
     }
-    public void HardRampExit(GameEvent evt)
-    {
+    public void HardRampExit(GameEvent evt) {
         _canHardJump = false;
     }
     #endregion
 
 
     //Gameover
-    public void GameOver()
-    {
+    public void GameOver() {
         Debug.Log("Game Over");
         if (_deathViewController) return;
         _deathViewController = Instantiate(_DeathViewPrefab);
         isPaused = true;
-        _dead = true;
-        this._levelOneControl = false;
-        this._levelTwoControl = false;
+        _Dead = true;
 
         PoolableObject[] allObjectsInScene = FindObjectsOfType<PoolableObject>();
-        foreach (PoolableObject obj in allObjectsInScene)
-        {
-            if (obj.isActiveAndEnabled)
-            {
+        foreach (PoolableObject obj in allObjectsInScene) {
+            if (obj.isActiveAndEnabled) {
                 obj.transform.position = _SlopeEnd.transform.position;
             }
         }
         isPaused = false;
     }
 
-    //Velocity Test
-    [ContextMenu("InvokeEvent")]
-    public void InvokeEvent()
-    {
-        setVelocity(10);
-
-    }
-
-    private void Update()
-    {
-        if (points >= 1000 && !_levelOneControl && !_dead)
-        {
+    private void Update() {
+        if (((points % _SpanPoint) == 0) && !_Dead && !_SpeedChangeController && points != 0) {
             _SpawnRateChangeInvoke.Invoke();
-            velocity = velocityLevelTwo;
-            _SpeedChangeEvent.Invoke();
-            _levelOneControl = true;
+            setVelocity(_Velocity + _IncVelocity);
+            _SpeedChangeController = true;
         }
-        if (points >= 2000 && !_levelTwoControl && !_dead)
-        {
-            _SpawnRateChangeInvoke.Invoke();
-            velocity = velocityLevelThree;
-            _SpeedChangeEvent.Invoke();
-            _levelTwoControl = true;
+        if (points % _SpanPoint != 0) {
+            _SpeedChangeController = false;
         }
     }
 
-    private void JumpStart(GameEvent evt)
-    {
-        if (_canEasyJump)
-        {
+    private void JumpStart(GameEvent evt) {
+        if (_canEasyJump) {
             _jumpPerformed = 1;
-        }
-        else if (_canMediumJump)
-        {
+        } else if (_canMediumJump) {
             _jumpPerformed = 2;
-        }
-        else if (_canHardJump)
-        {
+        } else if (_canHardJump) {
             _jumpPerformed = 3;
         }
     }
 
-    private void JumpCompleted(GameEvent evt)
-    {
+    private void JumpCompleted(GameEvent evt) {
         float jumpPoint = 0f;
 
-        if (_jumpPerformed == 1)
-        {
+        if (_jumpPerformed == 1) {
             jumpPoint = 300f;
-        }
-        else if (_jumpPerformed == 2)
-        {
+        } else if (_jumpPerformed == 2) {
             jumpPoint = 600f;
-        }
-        else if (_jumpPerformed == 3)
-        {
+        } else if (_jumpPerformed == 3) {
             jumpPoint = 1000f;
         }
 
@@ -465,8 +396,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         setPoints(points + ((int)jumpPoint * _multiplier));
     }
 
-    private void JumpFailed(GameEvent evt)
-    {
+    private void JumpFailed(GameEvent evt) {
         _jumpPerformed = 0;
         DamageTaken(evt);
     }
