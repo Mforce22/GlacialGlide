@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerControls : InputProvider {
+public class PlayerControls : InputProvider
+{
 
 
     #region Delegate
@@ -17,7 +18,8 @@ public class PlayerControls : InputProvider {
     private InputActionReference _StopTouch;
 
 
-    private void OnEnable() {
+    private void OnEnable()
+    {
         _Touch.action.Enable();
         _StopTouch.action.Enable();
 
@@ -25,7 +27,8 @@ public class PlayerControls : InputProvider {
         _StopTouch.action.performed += EndTouchPrimary;
     }
 
-    private void OnDisable() {
+    private void OnDisable()
+    {
         _Touch.action.Disable();
         _StopTouch.action.Disable();
 
@@ -33,17 +36,14 @@ public class PlayerControls : InputProvider {
         _StopTouch.action.performed -= EndTouchPrimary;
     }
 
-    private void Start() {
-        //_playerTouchController.Touch.PrimaryContact.started += ctx => StartTouchPrimary(ctx);
-        //_playerTouchController.Touch.PrimaryContact.canceled += ctx => EndTouchPrimary(ctx);
-    }
-
-    private void StartTouchPrimary(InputAction.CallbackContext ctx) {
+    private void StartTouchPrimary(InputAction.CallbackContext ctx)
+    {
         OnTouch?.Invoke();
         //Debug.Log("Start Touch");
     }
 
-    private void EndTouchPrimary(InputAction.CallbackContext ctx) {
+    private void EndTouchPrimary(InputAction.CallbackContext ctx)
+    {
         OnStopTouch?.Invoke();
         //Debug.Log("End Touch");
     }
