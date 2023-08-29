@@ -7,7 +7,6 @@ public class CollisionDetector : MonoBehaviour {
     [SerializeField]
     private GameEvent _EventToInvoke;
 
-
     [Header("Pool Manager Id")]
     [Tooltip("Id of the pool manager to use")]
     [SerializeField]

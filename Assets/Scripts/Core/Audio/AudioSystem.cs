@@ -22,6 +22,7 @@ public class AudioSystem : Singleton<AudioSystem>, ISystem {
         musicSource.loop = true;
         musicSource.playOnAwake = false;
         musicSource.volume = 0.5f; // Default volume.
+        
 
         // Signal that the system setup is finished.
         SystemCoordinator.Instance.FinishSystemSetup(this);
