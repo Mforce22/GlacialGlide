@@ -51,5 +51,6 @@ public class OptionsViewController : MonoBehaviour {
     public void SetAudioVolume(Slider slider) {
         // Set the audio volume based on the slider value.
         AudioSystem.Instance.SetVolume(slider.value);
+        SoundSystem.Instance.SetVolume(slider.value + (slider.value/10) );
     }
 }
