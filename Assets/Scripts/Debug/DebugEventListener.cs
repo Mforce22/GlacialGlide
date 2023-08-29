@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class DebugEventListener : MonoBehaviour
-{
+public class DebugEventListener : MonoBehaviour {
     [SerializeField]
     private IdContainerGameEvent _DebugEvent;
 

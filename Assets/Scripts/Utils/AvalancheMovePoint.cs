@@ -1,12 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class AvalancheMovePoint : MonoBehaviour
-{
+public class AvalancheMovePoint : MonoBehaviour {
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         StartCoroutine(MovePoint());
     }
 

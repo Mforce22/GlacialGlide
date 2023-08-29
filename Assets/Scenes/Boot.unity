@@ -320,13 +320,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4624569719816091465, guid: b06ff5887c5f03a4d93ac013376ab6f5, type: 3}
+      propertyPath: _Velocity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4624569719816091465, guid: b06ff5887c5f03a4d93ac013376ab6f5, type: 3}
       propertyPath: _JumpStart
       value: 
       objectReference: {fileID: 11400000, guid: ce3a6bda41ce8e94f95e1a861bbb8d61, type: 2}
     - target: {fileID: 4624569719816091465, guid: b06ff5887c5f03a4d93ac013376ab6f5, type: 3}
+      propertyPath: _SpanPoint
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4624569719816091465, guid: b06ff5887c5f03a4d93ac013376ab6f5, type: 3}
       propertyPath: _JumpFailed
       value: 
       objectReference: {fileID: 11400000, guid: 54081b4457777b14a910c394e03086d0, type: 2}
+    - target: {fileID: 4624569719816091465, guid: b06ff5887c5f03a4d93ac013376ab6f5, type: 3}
+      propertyPath: _IncVelocity
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4624569719816091465, guid: b06ff5887c5f03a4d93ac013376ab6f5, type: 3}
       propertyPath: _JumpCompleted
       value: 

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -29,7 +27,7 @@ public class OptionsViewController : MonoBehaviour {
         // Reset game parameters.
         GameMaster.Instance.setHearts(3);
         GameMaster.Instance.setPoints(0);
-        GameMaster.Instance.setVelocity(2);
+        GameMaster.Instance.setVelocity(2.0f);
         GameMaster.Instance.GameOver();
 
         // Load the specified scene and stop background music.

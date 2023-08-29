@@ -36,11 +36,11 @@ public class SpawnAvalanche : MonoBehaviour {
             Instantiate(_AvalanchePrefab, _AvalancheSpawnPoint.transform.position, Quaternion.identity);
             GameObject warningUI = Instantiate(_WarningUIPrefab);
             warningUI.GetComponentInChildren<CanvasGroup>().alpha = 0.0f;
-            for (int i=0; i<5; i++) {
+            for (int i = 0; i < 5; i++) {
                 warningUI.GetComponentInChildren<CanvasGroup>().alpha += 0.2f;
                 yield return new WaitForSeconds(0.1f);
             }
-            
+
             yield return new WaitForSeconds(_WarningUIDisplayTime);
             for (int i = 0; i < 5; i++) {
                 warningUI.GetComponentInChildren<CanvasGroup>().alpha -= 0.2f;

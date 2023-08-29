@@ -1,19 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
-{
+public class Movement : MonoBehaviour {
     [Header("Events")]
     [Tooltip("Event to subscribe to change the speed of the object")]
     [SerializeField]
     private GameEvent _ChangeSpeedEvent;
 
     [Header("Movement")]
-    private int _movement;
+    private float _movement;
 
-    private void Awake()
-    {
+    private void Awake() {
         _ChangeSpeedEvent.Subscribe(SpeedChanged);
     }
 
@@ -21,15 +17,13 @@ public class Movement : MonoBehaviour
         _movement = GameMaster.Instance.getVelocity();
     }
 
-    private void OnDisable()
-    {
+    private void OnDisable() {
         _ChangeSpeedEvent.Unsubscribe(SpeedChanged);
     }
 
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         //get instance of GameMaster
         _movement = GameMaster.Instance.getVelocity();
 
@@ -37,18 +31,15 @@ public class Movement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         //if the game isn't in pause
-        if (!GameMaster.Instance.getPause())
-        {
+        if (!GameMaster.Instance.getPause()) {
             //move up 
             transform.Translate(Vector3.up * _movement * Time.deltaTime);
         }
     }
 
-    void SpeedChanged(GameEvent evt)
-    {
+    void SpeedChanged(GameEvent evt) {
         _movement = GameMaster.Instance.getVelocity();
         Debug.Log("Speed changed to " + _movement);
     }
