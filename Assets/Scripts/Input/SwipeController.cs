@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public class SwipeController : MonoBehaviour {
+public class SwipeController : MonoBehaviour
+{
     [SerializeField]
     private IdContainer _IdProvider;
 
@@ -35,13 +36,15 @@ public class SwipeController : MonoBehaviour {
 
     private bool _isPaused = false;
 
-    private void Awake() {
+    private void Awake()
+    {
         _gameplayInputProvider = PlayerController.Instance.GetInput<PlayerControls>(_IdProvider.Id);
         //_playerTouchController = new PlayerTouchController();
     }
 
 
-    private void OnEnable() {
+    private void OnEnable()
+    {
         //_playerTouchController.Enable();
 
         _gameplayInputProvider.OnTouch += StartMoving;
@@ -49,7 +52,8 @@ public class SwipeController : MonoBehaviour {
 
         _pauseEvent.Subscribe(Pause);
     }
-    private void OnDisable() {
+    private void OnDisable()
+    {
         //_playerTouchController.Disable();
         _gameplayInputProvider.OnTouch -= StartMoving;
         _gameplayInputProvider.OnStopTouch -= StopMoving;
@@ -58,43 +62,54 @@ public class SwipeController : MonoBehaviour {
     }
 
 
-    private void StartMoving() {
+    private void StartMoving()
+    {
         Touch touch = Input.GetTouch(Input.touchCount - 1);
         startPosition = Camera.main.ScreenToWorldPoint(touch.position);
 
         _startTime = Time.time;
 
     }
-    private void StopMoving() {
+    private void StopMoving()
+    {
         Touch touch = Input.GetTouch(Input.touchCount - 1);
         endPosition = Camera.main.ScreenToWorldPoint(touch.position);
 
         _endTime = Time.time;
 
-        if (!_isPaused) {
+        Debug.Log("Swipe pause______________________: " + _isPaused);
+        if (!_isPaused)
+        {
             bool check = CheckSwipe();
-            if (check) {
+            if (check)
+            {
                 bool canJump = GameMaster.Instance.canJump();
-                if (canJump) {
+                if (canJump)
+                {
                     //instantiate the prefab
                     Instantiate(_minigamePrefab);
                     _jumpStartEvent.Invoke();
-                } else
+                }
+                else
                     Debug.Log("Can't Jump");
             }
         }
     }
 
-    private void Pause(GameEvent evt) {
+    private void Pause(GameEvent evt)
+    {
         _isPaused = !_isPaused;
     }
 
-    private bool CheckSwipe() {
-        if (Vector3.Distance(startPosition, endPosition) >= _swipeDistance && (_endTime - _startTime) <= _maxSwipeTime) {
+    private bool CheckSwipe()
+    {
+        if (Vector3.Distance(startPosition, endPosition) >= _swipeDistance && (_endTime - _startTime) <= _maxSwipeTime)
+        {
             Debug.Log("Swipe Detected");
             Vector3 direction = endPosition - startPosition;
             Vector2 direction2D = new Vector2(direction.x, direction.y).normalized;
-            if (Vector2.Dot(direction2D, Vector2.up) > _directionTreshold) {
+            if (Vector2.Dot(direction2D, Vector2.up) > _directionTreshold)
+            {
                 Debug.Log("Swipe Up");
                 return true;
             }
