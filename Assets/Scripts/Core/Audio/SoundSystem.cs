@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundSystem : Singleton<AudioSystem>, ISystem {
+public class SoundSystem : Singleton<SoundSystem>, ISystem {
     [SerializeField]
     private int _Priority; // Priority of the audio system.
     public int Priority { get => _Priority; }
@@ -110,5 +110,9 @@ public class SoundSystem : Singleton<AudioSystem>, ISystem {
         musicSource.Stop();
         musicSource.clip = _GameOverClip;
         musicSource.Play();
+    }
+
+    public void SetVolume(float volume) {
+        musicSource.volume = volume;
     }
 }
