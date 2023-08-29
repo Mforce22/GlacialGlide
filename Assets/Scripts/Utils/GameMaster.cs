@@ -158,6 +158,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem {
     #region Setters&Getters
     public void setVelocity(float _velocity) {
         _Velocity = _velocity;
+        Debug.Log("Sped setted to: " + _Velocity);
         _SpeedChangeEvent.Invoke();
     }
     public float getVelocity() {

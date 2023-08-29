@@ -9,10 +9,6 @@ public class Movement : MonoBehaviour {
     [Header("Movement")]
     private float _movement;
 
-    private void Awake() {
-        _ChangeSpeedEvent.Subscribe(SpeedChanged);
-    }
-
     private void OnEnable() {
         _movement = GameMaster.Instance.getVelocity();
     }
@@ -27,7 +23,7 @@ public class Movement : MonoBehaviour {
         //get instance of GameMaster
         _movement = GameMaster.Instance.getVelocity();
 
-        //_ChangeSpeedEvent.Subscribe(SpeedChanged);
+        _ChangeSpeedEvent.Subscribe(SpeedChanged);
     }
 
     // Update is called once per frame

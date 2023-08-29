@@ -17,10 +17,14 @@ public class JumpViewController : MonoBehaviour
     private GameObject _RedCircle;
 
     private Vector3 _vect = new Vector3(0.04f, 0.04f, 0);
+    private float oldSpeed;
     #endregion
 
     private void Start()
     {
+        oldSpeed = GameMaster.Instance.getVelocity();
+        GameMaster.Instance.setVelocity(0.5f);
+        Debug.Log("Speed reduced");
         StartCoroutine(Reduce());
     }
 
@@ -65,5 +69,10 @@ public class JumpViewController : MonoBehaviour
             _JumpFailed.Invoke();
             Destroy(gameObject);
         }
+    }
+
+    private void OnDisable() {
+        Debug.Log("Speed ripristinata");
+        GameMaster.Instance.setVelocity(oldSpeed);
     }
 }
