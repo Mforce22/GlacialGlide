@@ -102,6 +102,11 @@ public class SoundSystem : Singleton<AudioSystem>, ISystem {
     }
 
     void GameOver(GameEvent evt) {
+        StartCoroutine(WaitAndPlay());
+    }
+
+    IEnumerator WaitAndPlay() {
+        yield return new WaitForSeconds(0.2f);
         musicSource.Stop();
         musicSource.clip = _GameOverClip;
         musicSource.Play();
