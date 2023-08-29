@@ -37,6 +37,10 @@ public class GameMaster : Singleton<GameMaster>, ISystem {
     [SerializeField]
     private GameEvent _DamageTakenEvent;
 
+    [Tooltip("Event listened when the player take a bomb")]
+    [SerializeField]
+    private GameEvent _BombTakenEvent;
+
     [Tooltip("Event listened when the player take a X2")]
     [SerializeField]
     private GameEvent _X2TakenEvent;
@@ -86,6 +90,10 @@ public class GameMaster : Singleton<GameMaster>, ISystem {
     [Tooltip("Event invoked when the jump is failed")]
     [SerializeField]
     private GameEvent _JumpFailed;
+
+    [Tooltip("Event invoked when the game is over")]
+    [SerializeField]
+    private GameEvent _GameOverEvent;
 
     #endregion
 
@@ -213,6 +221,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem {
         //subscibe to the event
         _ShieldHitEvent.Subscribe(ShieldHit);
         _HeartTakenEvent.Subscribe(HeartTaken);
+        _BombTakenEvent.Subscribe(BombTaken);
         _CoinTakenEvent.Subscribe(CoinTaken);
         _DamageTakenEvent.Subscribe(DamageTaken);
         _X2TakenEvent.Subscribe(X2Taken);
@@ -232,6 +241,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem {
     private void OnDisable() {
         _ShieldHitEvent.Unsubscribe(ShieldHit);
         _HeartTakenEvent.Unsubscribe(HeartTaken);
+        _BombTakenEvent.Unsubscribe(BombTaken);
         _CoinTakenEvent.Unsubscribe(CoinTaken);
         _DamageTakenEvent.Unsubscribe(DamageTaken);
         _X2TakenEvent.Unsubscribe(X2Taken);
@@ -281,6 +291,20 @@ public class GameMaster : Singleton<GameMaster>, ISystem {
 
     void DamageTaken(GameEvent evt) {
         Debug.Log("Damage taken");
+        if (_hasShield) {
+            _hasShield = false;
+            _ShieldRemovedEvent.Invoke();
+        } else {
+            setHearts(hearts - 1);
+            if (hearts <= 0) {
+                //game over
+                GameOver();
+            }
+        }
+    }
+
+    void BombTaken(GameEvent evt) {
+        Debug.Log("Bomb taken");
         if (_hasShield) {
             _hasShield = false;
             _ShieldRemovedEvent.Invoke();
@@ -345,6 +369,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem {
 
     //Gameover
     public void GameOver() {
+        _GameOverEvent.Invoke();
         Debug.Log("Game Over");
         if (_deathViewController) return;
         _deathViewController = Instantiate(_DeathViewPrefab);
