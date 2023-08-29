@@ -46,5 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ID: {fileID: 11400000, guid: f70f7dd6580b6e54f95bbd6b9db687d9, type: 2}
   _PoolableObjectPrefab: {fileID: 3293415199532737017, guid: a55138f60fc9349439b42cb61537fe76, type: 3}
-  _Quantity: 50
+  _Quantity: 15
   _ObjectsPerFrame: 10
