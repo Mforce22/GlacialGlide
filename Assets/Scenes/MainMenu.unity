@@ -396,10 +396,30 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2799268134191171680, guid: aab912bfcc198c14ba137da039b57c70, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2799268134191171680, guid: aab912bfcc198c14ba137da039b57c70, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2799268134191171680, guid: aab912bfcc198c14ba137da039b57c70, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2799268134191171680, guid: aab912bfcc198c14ba137da039b57c70, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3389221532591086259, guid: aab912bfcc198c14ba137da039b57c70, type: 3}
       propertyPath: _CreditsViewPrefab
       value: 
       objectReference: {fileID: 2804572031652395064, guid: 73997e3466489c142ac7295378e241d8, type: 3}
+    - target: {fileID: 3389221532591086259, guid: aab912bfcc198c14ba137da039b57c70, type: 3}
+      propertyPath: _HowToPlayViewPrefab
+      value: 
+      objectReference: {fileID: 8137123698022087389, guid: 49e61a8e93e73e0428618ca68d687a91, type: 3}
     - target: {fileID: 3396750340677798706, guid: aab912bfcc198c14ba137da039b57c70, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
