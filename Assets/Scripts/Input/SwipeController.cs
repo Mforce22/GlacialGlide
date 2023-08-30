@@ -46,6 +46,7 @@ public class SwipeController : MonoBehaviour
     private void OnEnable()
     {
         //_playerTouchController.Enable();
+        _gameplayInputProvider = PlayerController.Instance.GetInput<PlayerControls>(_IdProvider.Id);
 
         _gameplayInputProvider.OnTouch += StartMoving;
         _gameplayInputProvider.OnStopTouch += StopMoving;
@@ -77,7 +78,7 @@ public class SwipeController : MonoBehaviour
 
         _endTime = Time.time;
 
-        Debug.Log("Swipe pause______________________: " + _isPaused);
+        //Debug.Log("Swipe pause______________________: " + _isPaused);
         if (!_isPaused)
         {
             bool check = CheckSwipe();
@@ -103,6 +104,7 @@ public class SwipeController : MonoBehaviour
 
     private bool CheckSwipe()
     {
+        Debug.Log("Swipoe check");
         if (Vector3.Distance(startPosition, endPosition) >= _swipeDistance && (_endTime - _startTime) <= _maxSwipeTime)
         {
             Debug.Log("Swipe Detected");
