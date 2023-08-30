@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -417,8 +417,40 @@ PrefabInstance:
       value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: X2_SpawnRate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: Ramp_SpawnRate
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: Bombs_SpawnRate
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: Heart_SpawnRate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: LRamp_SpawnRate
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: SRamp_SpawnRate
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: Trees_SpawnRate
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: Shield_SpawnRate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
       propertyPath: SpawnRateDecrease
-      value: 0.08
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
       propertyPath: SpawnRateStopDecrease
@@ -498,10 +530,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _AvalanchePrefab: {fileID: 830712655934130759, guid: cd7e737783dd3d7409aea10acb325de8, type: 3}
   _AvalancheSpawnPoint: {fileID: 745500334}
-  _StartingSecondsForSpawn: 60
-  _EndingSecondsForSpawn: 120
+  _StartingSecondsForSpawn: 50
+  _EndingSecondsForSpawn: 100
   _WarningUIPrefab: {fileID: 7160907627855791513, guid: 168d7ad624ed5314d8ef6f4ae3353a31, type: 3}
-  _WarningUIDisplayTime: 2
+  _WarningUIDisplayTime: 2.5
 --- !u!1001 &1729128222
 PrefabInstance:
   m_ObjectHideFlags: 0
