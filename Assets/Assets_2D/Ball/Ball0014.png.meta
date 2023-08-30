@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -127,7 +127,28 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Ball0014_1
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 157
+        width: 360
+        height: 328
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed2eb9b09830d9c44b867fae7eadb216
+      internalID: -2059926740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -138,7 +159,26 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ball0014_0: 376268673
+      Ball0014_1: -2059926740
+      Ball0014_10: -121558119
+      Ball0014_11: -678518223
+      Ball0014_12: 1867855847
+      Ball0014_13: 338828666
+      Ball0014_14: 490794611
+      Ball0014_15: 1755896752
+      Ball0014_16: -524451270
+      Ball0014_17: -1590280434
+      Ball0014_18: 868229385
+      Ball0014_2: 4726543
+      Ball0014_3: 1016404912
+      Ball0014_4: -228926564
+      Ball0014_5: 1832153012
+      Ball0014_6: 813359528
+      Ball0014_7: 140633338
+      Ball0014_8: 1554240052
+      Ball0014_9: 698955579
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
