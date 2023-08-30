@@ -1,0 +1,488 @@
+fileFormatVersion: 2
+guid: f38ed2c4d46c4a146b901b68ce59fbb3
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bigJumpSpritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 6245
+        width: 215
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44eca9fab417940499e7158c20cfdec2
+      internalID: 1496418848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bigJumpSpritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 5834
+        width: 226
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 557878535b60d1f46a9106dbe3a975d1
+      internalID: -733705164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bigJumpSpritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 5266
+        width: 215
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 009409ef8cad2d046b1f090393a6ca1a
+      internalID: 1104975679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bigJumpSpritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 4737
+        width: 161
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eae18381098fc324bbddbf09062a22bd
+      internalID: 1899266641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bigJumpSpritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 4189
+        width: 193
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 930aae0704cfddf4eb240e84f0091143
+      internalID: 2117741788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bigJumpSpritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 3699
+        width: 214
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e0fceba34aa58b4d9881affe37e1569
+      internalID: -1781976154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bigJumpSpritesheet_37
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 3152
+        width: 184
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36d7b334d9ea7e948a77110cf101e2ea
+      internalID: 399497901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bigJumpSpritesheet_39
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 2663
+        width: 175
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28e4746fd34de424492256c7d8269194
+      internalID: -719748690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bigJumpSpritesheet_46
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 2154
+        width: 196
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 299b8cfcf166f034bb5678a9fa8cfe71
+      internalID: -343745299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bigJumpSpritesheet_51
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 1684
+        width: 195
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d57fc8b107762346bd23562e2b9f950
+      internalID: -968011327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bigJumpSpritesheet_56
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 1194
+        width: 156
+        height: 352
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdf88a9a3ac2b7a4cb9d5958b5e8100f
+      internalID: 736856263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bigJumpSpritesheet_60
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 801
+        width: 159
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94db0a89b447a5040adb6c4072b4bbdc
+      internalID: -1568375767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bigJumpSpritesheet_64
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 216
+        width: 222
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80f9544ceb2f306448d0a6b1fa02a3e5
+      internalID: -458969027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      bigJumpSpritesheet_0: 1496418848
+      bigJumpSpritesheet_1: -1960284751
+      bigJumpSpritesheet_10: -156445270
+      bigJumpSpritesheet_11: -292746769
+      bigJumpSpritesheet_12: 431199157
+      bigJumpSpritesheet_13: 1899266641
+      bigJumpSpritesheet_14: -644811114
+      bigJumpSpritesheet_15: 1525740370
+      bigJumpSpritesheet_16: 694310844
+      bigJumpSpritesheet_17: -1393712810
+      bigJumpSpritesheet_18: 1632636997
+      bigJumpSpritesheet_19: 2117741788
+      bigJumpSpritesheet_2: 65642637
+      bigJumpSpritesheet_20: -1741601415
+      bigJumpSpritesheet_21: -161892511
+      bigJumpSpritesheet_22: -1295504489
+      bigJumpSpritesheet_23: -141298314
+      bigJumpSpritesheet_24: 1306873951
+      bigJumpSpritesheet_25: -651796128
+      bigJumpSpritesheet_26: 987639399
+      bigJumpSpritesheet_27: 1015213968
+      bigJumpSpritesheet_28: 1455938546
+      bigJumpSpritesheet_29: -1781976154
+      bigJumpSpritesheet_3: -733705164
+      bigJumpSpritesheet_30: -20245305
+      bigJumpSpritesheet_31: 451918192
+      bigJumpSpritesheet_32: 389920009
+      bigJumpSpritesheet_33: -1055040884
+      bigJumpSpritesheet_34: 1566774568
+      bigJumpSpritesheet_35: 1945571034
+      bigJumpSpritesheet_36: -1332128137
+      bigJumpSpritesheet_37: 399497901
+      bigJumpSpritesheet_38: 609183214
+      bigJumpSpritesheet_39: -719748690
+      bigJumpSpritesheet_4: 571264891
+      bigJumpSpritesheet_40: -1200502677
+      bigJumpSpritesheet_41: -465860874
+      bigJumpSpritesheet_42: 1319113994
+      bigJumpSpritesheet_43: -1159697663
+      bigJumpSpritesheet_44: 781342610
+      bigJumpSpritesheet_45: -23505870
+      bigJumpSpritesheet_46: -343745299
+      bigJumpSpritesheet_47: -2024804323
+      bigJumpSpritesheet_48: 165720150
+      bigJumpSpritesheet_49: 1179043169
+      bigJumpSpritesheet_5: 233740488
+      bigJumpSpritesheet_50: 1030716765
+      bigJumpSpritesheet_51: -968011327
+      bigJumpSpritesheet_52: -865621409
+      bigJumpSpritesheet_53: 48251001
+      bigJumpSpritesheet_54: 1102668522
+      bigJumpSpritesheet_55: -1155136457
+      bigJumpSpritesheet_56: 736856263
+      bigJumpSpritesheet_57: 1327427245
+      bigJumpSpritesheet_58: -1443582145
+      bigJumpSpritesheet_59: -1582786910
+      bigJumpSpritesheet_6: -1506284718
+      bigJumpSpritesheet_60: -1568375767
+      bigJumpSpritesheet_61: 818568873
+      bigJumpSpritesheet_62: 118107529
+      bigJumpSpritesheet_63: 403999823
+      bigJumpSpritesheet_64: -458969027
+      bigJumpSpritesheet_65: -958148728
+      bigJumpSpritesheet_66: 600518122
+      bigJumpSpritesheet_67: -602846079
+      bigJumpSpritesheet_7: 102400111
+      bigJumpSpritesheet_8: 1104975679
+      bigJumpSpritesheet_9: 1771863515
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

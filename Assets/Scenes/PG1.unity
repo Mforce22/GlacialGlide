@@ -626,6 +626,7 @@ MonoBehaviour:
   _jumpEndEvent: {fileID: 11400000, guid: 02dc2645433ea654ca13bd626eaa895e, type: 2}
   _jumpFailedEvent: {fileID: 11400000, guid: 54081b4457777b14a910c394e03086d0, type: 2}
   _damageTakenEvent: {fileID: 11400000, guid: a766238b099f6d24b9303453367e6b3f, type: 2}
+  _bombEvent: {fileID: 11400000, guid: 18db78b08220177488a389d0787affbc, type: 2}
 --- !u!1001 &3141878690033266622
 PrefabInstance:
   m_ObjectHideFlags: 0
