@@ -95,6 +95,10 @@ public class SwipeController : MonoBehaviour
                     Debug.Log("Can't Jump");
             }
         }
+        else
+        {
+            Debug.Log("Game is paused im swipe controller");
+        }
     }
 
     private void Pause(GameEvent evt)

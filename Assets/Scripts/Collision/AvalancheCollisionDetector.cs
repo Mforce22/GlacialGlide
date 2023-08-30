@@ -14,11 +14,18 @@ public class AvalancheCollisionDetector : MonoBehaviour
     [SerializeField]
     private IdContainer _idPoolManager;
 
+    private bool _alreadyTriggered = false;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (_alreadyTriggered)
+        {
+            return;
+        }
         Debug.Log("Trigger detected " + gameObject.name);
         _EventToInvoke.Invoke();
         _EventToInvoke.Invoke();//avalanche do 2 damage
+        _alreadyTriggered = true;
         //PoolManager poolManager = PoolingSystem.Instance.getPoolManagerInstance(_idPoolManager);
         //poolManager.ReturnPoolableObject(gameObject.GetComponent<PoolableObject>());
     }
