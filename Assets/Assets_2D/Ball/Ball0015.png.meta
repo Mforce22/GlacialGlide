@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -127,7 +127,28 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Ball0015_1
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 157
+        width: 360
+        height: 328
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fac6864fc4ffa84c816ce693e95c2eb
+      internalID: 2052722887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -138,7 +159,26 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ball0015_0: -1883016301
+      Ball0015_1: 2052722887
+      Ball0015_10: 618516292
+      Ball0015_11: -1323953875
+      Ball0015_12: -585886438
+      Ball0015_13: 632021466
+      Ball0015_14: 1760228615
+      Ball0015_15: 374045409
+      Ball0015_16: 1096626091
+      Ball0015_17: 870234125
+      Ball0015_18: -1089358355
+      Ball0015_2: -996109955
+      Ball0015_3: 652456591
+      Ball0015_4: -320923682
+      Ball0015_5: -1231279446
+      Ball0015_6: -439465446
+      Ball0015_7: -576903936
+      Ball0015_8: 92595117
+      Ball0015_9: -1834317338
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

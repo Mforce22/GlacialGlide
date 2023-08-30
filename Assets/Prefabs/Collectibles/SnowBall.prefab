@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3624115013039731071}
   - component: {fileID: 2627537197697346546}
   - component: {fileID: 5557023727049923964}
-  - component: {fileID: 8888514347517784303}
   - component: {fileID: 669821454442556919}
   - component: {fileID: 4663830139269904771}
   - component: {fileID: -4702571742564777887}
@@ -73,22 +72,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d198fef9356d25458466d515f12dfaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!58 &8888514347517784303
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 830712655934130759}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!114 &669821454442556919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,16 +137,17 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 1.1162574, y: 0.9109192}
+    - - {x: 1.3747071, y: 0.9904422}
       - {x: -0.038639545, y: 1.1931977}
-      - {x: -1.1144785, y: 0.77825975}
-      - {x: -0.96655977, y: 0.06613392}
+      - {x: -1.3331667, y: 0.82796156}
+      - {x: -1.0957847, y: 0.05619356}
       - {x: -0.74572664, y: -0.22524384}
       - {x: -0.38107625, y: -0.48345044}
       - {x: 0.01636649, y: -0.54800546}
       - {x: 0.37074092, y: -0.4782826}
       - {x: 0.75707215, y: -0.25655663}
-      - {x: 1.0595787, y: 0.16948861}
+      - {x: 1.1064091, y: -0.041338235}
+      - {x: 1.2484459, y: 0.15954825}
 --- !u!1 &3929149296160332240
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,8 +242,9 @@ GameObject:
   m_Component:
   - component: {fileID: 113258239072813801}
   - component: {fileID: 4823671841291808309}
+  - component: {fileID: 7839329733361670940}
   m_Layer: 0
-  m_Name: Ball0012
+  m_Name: SnowballSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -273,7 +258,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4456753223232436191}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.148, y: 0.25, z: 0}
+  m_LocalPosition: {x: 0, y: 0.58, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -321,14 +306,35 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: c010c4be8af9f85479b169cea0e2660e, type: 3}
+  m_Sprite: {fileID: 531327159, guid: ad7de523bb3ccdf40a4c86da7f3303e0, type: 3}
   m_Color: {r: 0.49247953, g: 0.50457406, b: 0.8773585, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 10.24, y: 7.68}
+  m_Size: {x: 3.63, y: 3.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &7839329733361670940
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4456753223232436191}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 54d08e784b47007488c67786e93ff2b4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

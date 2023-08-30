@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: aded887ea70fc344d90b4978b6ea0be7
+guid: a40cd82585258df4dbc5ff4f7bb3aa65
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ball0003_3
+      name: damageSpritesheet_0
       rect:
         serializedVersion: 2
-        x: 429
-        y: 507
-        width: 212
-        height: 229
+        x: 192
+        y: 594
+        width: 222
+        height: 222
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,8 +143,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a096eafdad619ef45a7259e7a8f30794
-      internalID: 1941600307
+      spriteID: a5231683d0e9c1442ad532995d04dd9d
+      internalID: -660471000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: damageSpritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 72
+        width: 240
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81bd096600e8fb7459d628d7fb45b218
+      internalID: 147176662
       vertices: []
       indices: 
       edges: []
@@ -160,14 +181,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Ball0003_0: -588857492
-      Ball0003_1: 1095669312
-      Ball0003_2: 116186643
-      Ball0003_3: 1941600307
-      Ball0003_4: 1782189935
-      Ball0003_5: 87964573
-      Ball0003_6: 1401384493
-      Ball0003_7: 1290505823
+      damageSpritesheet_0: -660471000
+      damageSpritesheet_1: 147176662
+      damageSpritesheet_2: 1719331146
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
