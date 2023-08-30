@@ -13,13 +13,16 @@ public class LoadScene : Unit
     [DoNotSerialize]
     public ValueInput SceneToLoad;
 
-    protected override void Definition() {
+    protected override void Definition()
+    {
         InputTrigger = ControlInput("", InternalBoot);
         OutputTrigger = ControlOutput("");
-        SceneToLoad = ValueInput<string>("Scene To Load","");
+        SceneToLoad = ValueInput<string>("Scene To Load", "");
     }
 
-    private ControlOutput InternalBoot(Flow arg) {
+    private ControlOutput InternalBoot(Flow arg)
+    {
+        Debug.Log("LoadScene: " + arg.GetValue<string>(SceneToLoad));
         TravelSystem.Instance.SceneLoad(arg.GetValue<string>(SceneToLoad));
         return OutputTrigger;
     }
