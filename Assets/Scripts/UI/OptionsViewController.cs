@@ -31,7 +31,7 @@ public class OptionsViewController : MonoBehaviour
         // Reset game parameters.
         GameMaster.Instance.setHearts(3);
         GameMaster.Instance.setPoints(0);
-        GameMaster.Instance.setVelocity(2.0f);
+        GameMaster.Instance.SetStartingSpeed();
         //GameMaster.Instance.GameOver();
 
         // Load the specified scene and stop background music.

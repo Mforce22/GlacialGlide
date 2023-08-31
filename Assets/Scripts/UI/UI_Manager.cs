@@ -103,5 +103,6 @@ public class UI_Manager : MonoBehaviour {
     private void Start() {
         _Points = GameMaster.Instance.getPoints();
         _Hearts = GameMaster.Instance.getHearts();
+        GameMaster.Instance.SetStartingSpeed();
     }
 }

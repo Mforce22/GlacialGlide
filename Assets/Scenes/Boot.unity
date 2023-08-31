@@ -321,7 +321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4624569719816091465, guid: b06ff5887c5f03a4d93ac013376ab6f5, type: 3}
       propertyPath: _Velocity
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4624569719816091465, guid: b06ff5887c5f03a4d93ac013376ab6f5, type: 3}
       propertyPath: _JumpStart
@@ -329,7 +329,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: ce3a6bda41ce8e94f95e1a861bbb8d61, type: 2}
     - target: {fileID: 4624569719816091465, guid: b06ff5887c5f03a4d93ac013376ab6f5, type: 3}
       propertyPath: _SpanPoint
-      value: 1000
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 4624569719816091465, guid: b06ff5887c5f03a4d93ac013376ab6f5, type: 3}
       propertyPath: _JumpFailed
@@ -337,7 +337,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 54081b4457777b14a910c394e03086d0, type: 2}
     - target: {fileID: 4624569719816091465, guid: b06ff5887c5f03a4d93ac013376ab6f5, type: 3}
       propertyPath: _IncVelocity
-      value: 0.2
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 4624569719816091465, guid: b06ff5887c5f03a4d93ac013376ab6f5, type: 3}
       propertyPath: _GameOverEvent
