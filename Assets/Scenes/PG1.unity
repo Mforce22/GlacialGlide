@@ -417,7 +417,19 @@ PrefabInstance:
       value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: _SpawnRate
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: _SpawnPoint
+      value: 
+      objectReference: {fileID: 1716498803}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
       propertyPath: X2_SpawnRate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: _X2_SpawnRate
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
@@ -445,21 +457,129 @@ PrefabInstance:
       value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: _Coin_SpawnRate
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: _Ramp_SpawnRate
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
       propertyPath: Shield_SpawnRate
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: _Bombs_SpawnRate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: _Heart_SpawnRate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: _JumpFailedEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 54081b4457777b14a910c394e03086d0, type: 2}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: _LRamp_SpawnRate
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: _MRamp_SpawnRate
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: _SRamp_SpawnRate
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: _SlowedSpawnRate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: _Trees_SpawnRate
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
       propertyPath: SpawnRateDecrease
       value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: _JumpStartedEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: ce3a6bda41ce8e94f95e1a861bbb8d61, type: 2}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: _Shield_SpawnRate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: _SpeedChangeEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: e258b91dbda03e34aa3af0083fa80525, type: 2}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: _SpawnRateDecrease
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: _JumpCompletedEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 02dc2645433ea654ca13bd626eaa895e, type: 2}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: _X2ManagerContainer
+      value: 
+      objectReference: {fileID: 11400000, guid: b6d7fefd10a56b441a54ce87fb3a184e, type: 2}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
       propertyPath: SpawnRateStopDecrease
       value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: _BombManagerContainer
+      value: 
+      objectReference: {fileID: 11400000, guid: b7c532e766bfe5a4c87e6180856b6b9c, type: 2}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: _CoinManagerContainer
+      value: 
+      objectReference: {fileID: 11400000, guid: 491397e3985401640928064772565ece, type: 2}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
       propertyPath: _SpawnRateChangeEvent
       value: 
       objectReference: {fileID: 11400000, guid: 31a61d097cba22842810a2eab4091d9a, type: 2}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: _HeartManagerContainer
+      value: 
+      objectReference: {fileID: 11400000, guid: 3bd3d1e5f5c4a774b877e0475e3c40eb, type: 2}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: _LRampManagerContainer
+      value: 
+      objectReference: {fileID: 11400000, guid: f70f7dd6580b6e54f95bbd6b9db687d9, type: 2}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: _MRampManagerContainer
+      value: 
+      objectReference: {fileID: 11400000, guid: 6b7c5a91e3d08464988858f13b3f253b, type: 2}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: _SRampManagerContainer
+      value: 
+      objectReference: {fileID: 11400000, guid: 517919be0fa6981478357633814fbdae, type: 2}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: _SpawnRateStopDecrease
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: _Tree1ManagerContainer
+      value: 
+      objectReference: {fileID: 11400000, guid: 807516dfb25c6bb4a9d2061c1413bb37, type: 2}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: _Tree2ManagerContainer
+      value: 
+      objectReference: {fileID: 11400000, guid: f220fc8a7c08d3543b9df600e87b59e8, type: 2}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: _Tree3ManagerContainer
+      value: 
+      objectReference: {fileID: 11400000, guid: ce72b7b807e075e4bacafe29151b668d, type: 2}
+    - target: {fileID: 2853898633408909903, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+      propertyPath: _ShieldManagerContainer
+      value: 
+      objectReference: {fileID: 11400000, guid: ed17dd1b2c84077489ee754be39bf95d, type: 2}
     - target: {fileID: 6912198812420696936, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -534,6 +654,11 @@ MonoBehaviour:
   _EndingSecondsForSpawn: 100
   _WarningUIPrefab: {fileID: 7160907627855791513, guid: 168d7ad624ed5314d8ef6f4ae3353a31, type: 3}
   _WarningUIDisplayTime: 2.5
+--- !u!1 &1716498803 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6449189179454832579, guid: 9b84f9f473e1c714bbcdb3bfe2f97b2e, type: 3}
+  m_PrefabInstance: {fileID: 1716498799}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1729128222
 PrefabInstance:
   m_ObjectHideFlags: 0
