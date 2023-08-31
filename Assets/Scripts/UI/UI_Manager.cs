@@ -80,6 +80,10 @@ public class UI_Manager : MonoBehaviour {
                 _Heart3.SetActive(true);
                 break;
         }
+
+        if(_optionsViewController == null) {
+            GameMaster.Instance.setPause(false);
+        }
     }
 
     /// <summary>
