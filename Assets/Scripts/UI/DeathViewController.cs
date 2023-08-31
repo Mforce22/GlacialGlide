@@ -34,7 +34,7 @@ public class DeathViewController : MonoBehaviour
         GameMaster.Instance.setHearts(3);
         GameMaster.Instance.setPause(false);
         GameMaster.Instance.setPoints(0);
-        GameMaster.Instance.setVelocity(3.0f);
+        GameMaster.Instance.SetStartingSpeed();
 
         // Load the specified scene.
         //TravelSystem.Instance.SceneLoad(scene);

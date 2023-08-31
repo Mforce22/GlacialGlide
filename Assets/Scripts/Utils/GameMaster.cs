@@ -110,6 +110,10 @@ public class GameMaster : Singleton<GameMaster>, ISystem {
     private float _IncVelocity;
 
     [SerializeField]
+    [Tooltip("Starting speed")]
+    private float _StartingVelocity = 3.5f;
+
+    [SerializeField]
     [Tooltip("Point of incremental velocity")]
     private int _SpanPoint;
 
@@ -162,6 +166,10 @@ public class GameMaster : Singleton<GameMaster>, ISystem {
         _Velocity = _velocity;
         Debug.Log("Sped setted to: " + _Velocity);
         _SpeedChangeEvent.Invoke();
+    }
+
+    public void SetStartingSpeed() {
+        _Velocity = _StartingVelocity;
     }
     public float getVelocity() {
         return _Velocity;
