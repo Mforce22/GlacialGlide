@@ -437,6 +437,6 @@ public class GameMaster : Singleton<GameMaster>, ISystem {
 
     private void JumpFailed(GameEvent evt) {
         _jumpPerformed = 0;
-        DamageTaken(evt);
+        _DamageTakenEvent.Invoke();
     }
 }
