@@ -33,6 +33,9 @@ public class UI_Manager : MonoBehaviour {
 
     private OptionsViewController _optionsViewController; // Reference to the instantiated options view.
 
+    /// <summary>
+    /// Updates the game state, including points and hearts displays, based on the current state from GameMaster.
+    /// </summary>
     void Update() {
         // Update points and hearts from the GameMaster singleton.
         _Points = GameMaster.Instance.getPoints();
@@ -81,7 +84,8 @@ public class UI_Manager : MonoBehaviour {
                 break;
         }
 
-        if(_optionsViewController == null) {
+        // Resume the game if the options view is not open.
+        if (_optionsViewController == null) {
             GameMaster.Instance.setPause(false);
         }
     }
@@ -91,7 +95,6 @@ public class UI_Manager : MonoBehaviour {
     /// </summary>
     [ContextMenu("Options")]
     public void OpenOptions() {
-        Debug.Log("Options view instantiating");
         if (_optionsViewController) return;
         _optionsViewController = Instantiate(_OptionsViewPrefab);
         GameMaster.Instance.setPause(true);
