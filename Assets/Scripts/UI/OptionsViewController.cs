@@ -37,6 +37,7 @@ public class OptionsViewController : MonoBehaviour
         // Load the specified scene and stop background music.
         //TravelSystem.Instance.SceneLoad(scene);
         AudioSystem.Instance.StopMusic();
+        GameMaster.Instance.setPause(false);
         FlowSystem.Instance.TriggerFSMEvent(scene);
     }
 
@@ -46,7 +47,9 @@ public class OptionsViewController : MonoBehaviour
     public void CloseOption()
     {
         // Resume the game and destroy the options view GameObject.
-        GameMaster.Instance.setPause(false);
+        if (!GameMaster.Instance.getDeath()) {
+            GameMaster.Instance.setPause(false);
+        }
         Destroy(gameObject);
     }
 

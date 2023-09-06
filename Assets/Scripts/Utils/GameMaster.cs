@@ -558,9 +558,6 @@ public class GameMaster : Singleton<GameMaster>, ISystem {
         // Instantiate the death view prefab to display game over UI.
         _deathViewController = Instantiate(_DeathViewPrefab);
 
-        // Pause the game.
-        isPaused = true;
-
         // Set the player's state to dead.
         _Dead = true;
 
@@ -571,9 +568,6 @@ public class GameMaster : Singleton<GameMaster>, ISystem {
                 obj.transform.position = _SlopeEnd.transform.position;
             }
         }
-
-        // Unpause the game.
-        isPaused = false;
     }
 
     /// <summary>

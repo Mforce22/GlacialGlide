@@ -83,11 +83,6 @@ public class UI_Manager : MonoBehaviour {
                 _Heart3.SetActive(true);
                 break;
         }
-
-        // Resume the game if the options view is not open.
-        if (_optionsViewController == null) {
-            GameMaster.Instance.setPause(false);
-        }
     }
 
     /// <summary>
