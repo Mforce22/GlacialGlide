@@ -6,23 +6,23 @@ public class AnimationController : MonoBehaviour
 {
     [Header("Animator")]
     [SerializeField]
-    private Animator _animator;
+    private Animator _Animator;
 
     [Header("Events")]
     [SerializeField]
-    private GameEvent _jumpStartEvent;
+    private GameEvent _JumpStartEvent;
 
     [SerializeField]
-    private GameEvent _jumpEndEvent;
+    private GameEvent _JumpEndEvent;
 
     [SerializeField]
-    private GameEvent _jumpFailedEvent;
+    private GameEvent _JumpFailedEvent;
 
     [SerializeField]
-    private GameEvent _damageTakenEvent;
+    private GameEvent _DamageTakenEvent;
 
     [SerializeField]
-    private GameEvent _bombEvent;
+    private GameEvent _BombEvent;
 
 
     //create an enum for the animation states
@@ -36,32 +36,32 @@ public class AnimationController : MonoBehaviour
     private AnimationState _currentAnimationState = AnimationState.None;
     private void OnEnable()
     {
-        _jumpStartEvent.Subscribe(OnJumpStart);
-        _jumpEndEvent.Subscribe(OnJumpEnd);
-        _jumpFailedEvent.Subscribe(OnDamageTaken);
-        _damageTakenEvent.Subscribe(OnDamageTaken);
-        _bombEvent.Subscribe(OnDamageTaken);
+        _JumpStartEvent.Subscribe(OnJumpStart);
+        _JumpEndEvent.Subscribe(OnJumpEnd);
+        _JumpFailedEvent.Subscribe(OnDamageTaken);
+        _DamageTakenEvent.Subscribe(OnDamageTaken);
+        _BombEvent.Subscribe(OnDamageTaken);
     }
 
     private void OnDisable()
     {
-        _jumpStartEvent.Unsubscribe(OnJumpStart);
-        _jumpEndEvent.Unsubscribe(OnJumpEnd);
-        _jumpFailedEvent.Unsubscribe(OnDamageTaken);
-        _damageTakenEvent.Unsubscribe(OnDamageTaken);
-        _bombEvent.Unsubscribe(OnDamageTaken);
+        _JumpStartEvent.Unsubscribe(OnJumpStart);
+        _JumpEndEvent.Unsubscribe(OnJumpEnd);
+        _JumpFailedEvent.Unsubscribe(OnDamageTaken);
+        _DamageTakenEvent.Unsubscribe(OnDamageTaken);
+        _BombEvent.Unsubscribe(OnDamageTaken);
     }
 
     private void OnJumpStart(GameEvent evt)
     {
         if (GameMaster.Instance.getHardJump())
         {
-            _animator.SetTrigger("StartBigJump");
+            _Animator.SetTrigger("StartBigJump");
             _currentAnimationState = AnimationState.BigJump;
         }
         else
         {
-            _animator.SetTrigger("StartJump");
+            _Animator.SetTrigger("StartJump");
             _currentAnimationState = AnimationState.Jump;
         }
     }
@@ -70,17 +70,17 @@ public class AnimationController : MonoBehaviour
     {
         if (_currentAnimationState == AnimationState.BigJump)
         {
-            _animator.SetTrigger("EndBigJump");
+            _Animator.SetTrigger("EndBigJump");
         }
         else
         {
-            _animator.SetTrigger("JumpEnded");
+            _Animator.SetTrigger("JumpEnded");
         }
         _currentAnimationState = AnimationState.None;
     }
 
     private void OnDamageTaken(GameEvent evt)
     {
-        _animator.SetTrigger("Damage");
+        _Animator.SetTrigger("Damage");
     }
 }
