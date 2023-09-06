@@ -9,10 +9,10 @@ public class AvalancheCollisionDetector : MonoBehaviour
     private GameEvent _EventToInvoke;
 
 
-    [Header("Pool Manager Id")]
-    [Tooltip("Id of the pool manager to use")]
-    [SerializeField]
-    private IdContainer _idPoolManager;
+    // [Header("Pool Manager Id")]
+    // [Tooltip("Id of the pool manager to use")]
+    // [SerializeField]
+    // private IdContainer _idPoolManager;
 
     private bool _alreadyTriggered = false;
 

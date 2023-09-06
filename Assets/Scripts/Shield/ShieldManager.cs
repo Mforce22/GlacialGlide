@@ -1,35 +1,58 @@
 using UnityEngine;
 
-public class ShieldManager : MonoBehaviour {
+/// <summary>
+/// Manages the behavior of the shield power-up in the game.
+/// </summary>
+public class ShieldManager : MonoBehaviour
+{
     [Tooltip("The shield prefab")]
     [SerializeField]
-    private GameObject _shield;
+    private GameObject _Shield;
 
     [Tooltip("Event called when the shield is taken")]
     [SerializeField]
-    private GameEvent _onShieldTaken;
+    private GameEvent _OnShieldTaken;
 
     [Tooltip("Event called when the shield is removed")]
     [SerializeField]
-    private GameEvent _onShieldRemoved;
+    private GameEvent _OnShieldRemoved;
 
-
-    private void OnEnable() {
-        _onShieldTaken.Subscribe(OnShieldTaken);
-        _onShieldRemoved.Subscribe(OnShieldRemoved);
+    /// <summary>
+    /// Subscribes to events when the shield manager is enabled.
+    /// </summary>
+    private void OnEnable()
+    {
+        _OnShieldTaken.Subscribe(OnShieldTaken);
+        _OnShieldRemoved.Subscribe(OnShieldRemoved);
     }
 
-    private void OnDisable() {
-        _onShieldTaken.Unsubscribe(OnShieldTaken);
-        _onShieldRemoved.Unsubscribe(OnShieldRemoved);
+    /// <summary>
+    /// Unsubscribes from events when the shield manager is disabled.
+    /// </summary>
+    private void OnDisable()
+    {
+        _OnShieldTaken.Unsubscribe(OnShieldTaken);
+        _OnShieldRemoved.Unsubscribe(OnShieldRemoved);
     }
 
-    private void OnShieldTaken(GameEvent evt) {
-        _shield.SetActive(true);
+    /// <summary>
+    /// Activates the shield when it is taken.
+    /// </summary>
+    /// <param name="evt">The event associated with the shield being taken.</param>
+    private void OnShieldTaken(GameEvent evt)
+    {
+        // Activate the shield GameObject.
+        _Shield.SetActive(true);
     }
 
-    private void OnShieldRemoved(GameEvent evt) {
-        _shield.SetActive(false);
+    /// <summary>
+    /// Deactivates the shield when it is removed or expires.
+    /// </summary>
+    /// <param name="evt">The event associated with the shield being removed or expiring.</param>
+    private void OnShieldRemoved(GameEvent evt)
+    {
+        // Deactivate the shield GameObject.
+        _Shield.SetActive(false);
     }
 
 }

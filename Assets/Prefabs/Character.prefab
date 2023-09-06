@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1012908250}
   - component: {fileID: 1012908251}
-  - component: {fileID: 1027842820327626250}
+  - component: {fileID: 6591647281893392023}
   m_Layer: 6
   m_Name: Stickman
   m_TagString: Untagged
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: f88fa22fa3f8d9b4d80c40e4434decac, type: 2}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &1027842820327626250
+--- !u!95 &6591647281893392023
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -204,6 +204,7 @@ GameObject:
   - component: {fileID: 1729128224}
   - component: {fileID: 8928456132712354635}
   - component: {fileID: 1295631520869749306}
+  - component: {fileID: 1729128225}
   m_Layer: 6
   m_Name: Character
   m_TagString: Untagged
@@ -302,7 +303,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pauseEvent: {fileID: 11400000, guid: 5b839b021bf7c9f49b777b80ddc80b95, type: 2}
   _IdProvider: {fileID: 11400000, guid: 7d73e21dc2253964883cdb4d2260a89f, type: 2}
-  _Velocity: 2
+  _Velocity: 2.5
   _jumpStart: {fileID: 11400000, guid: ce3a6bda41ce8e94f95e1a861bbb8d61, type: 2}
   _jumpCompleted: {fileID: 11400000, guid: 02dc2645433ea654ca13bd626eaa895e, type: 2}
   _jumpFailed: {fileID: 11400000, guid: 54081b4457777b14a910c394e03086d0, type: 2}
@@ -334,9 +335,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _IdProvider: {fileID: 11400000, guid: 7d73e21dc2253964883cdb4d2260a89f, type: 2}
-  _pauseEvent: {fileID: 11400000, guid: 5b839b021bf7c9f49b777b80ddc80b95, type: 2}
+  _PauseEvent: {fileID: 11400000, guid: 5b839b021bf7c9f49b777b80ddc80b95, type: 2}
+  _JumpStartEvent: {fileID: 11400000, guid: ce3a6bda41ce8e94f95e1a861bbb8d61, type: 2}
+  _MinigamePrefab: {fileID: 7371842466267966083, guid: c81121d4426abd641af1d871394605e7, type: 3}
+  _SwipeDistance: 0.2
+  _MaxSwipeTime: 1
+  _DirectionTreshold: 0.9
+--- !u!114 &1729128225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7973410841093241977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 883e5831e7e06244c86ff2a28816bee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 6591647281893392023}
   _jumpStartEvent: {fileID: 11400000, guid: ce3a6bda41ce8e94f95e1a861bbb8d61, type: 2}
-  _minigamePrefab: {fileID: 7371842466267966083, guid: c81121d4426abd641af1d871394605e7, type: 3}
-  _swipeDistance: 0.2
-  _maxSwipeTime: 1
-  _directionTreshold: 0.9
+  _jumpEndEvent: {fileID: 11400000, guid: 02dc2645433ea654ca13bd626eaa895e, type: 2}
+  _jumpFailedEvent: {fileID: 11400000, guid: 54081b4457777b14a910c394e03086d0, type: 2}
+  _damageTakenEvent: {fileID: 11400000, guid: a766238b099f6d24b9303453367e6b3f, type: 2}
+  _bombEvent: {fileID: 11400000, guid: 18db78b08220177488a389d0787affbc, type: 2}

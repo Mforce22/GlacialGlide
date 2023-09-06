@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /// <summary>
-/// This class manages the main menu UI and provides methods to navigate to different scenes and open options and credits views.
+/// This class manages the main menu UI and provides methods to navigate to different scenes and open options, credits and how to play views.
 /// </summary>
 public class MainMenuViewController : MonoBehaviour
 {
@@ -14,7 +14,7 @@ public class MainMenuViewController : MonoBehaviour
 
     private OptionsViewController _optionsViewController; // Reference to the instantiated options view.
     private CreditsViewController _creditsViewController; // Reference to the instantiated credits view.
-    private HowToPlayViewController _HowToPlayViewController;
+    private HowToPlayViewController _HowToPlayViewController; // Reference to the instantiated how to play view.
 
     /// <summary>
     /// This method is called to change the game scene when a menu option is selected.
@@ -47,9 +47,14 @@ public class MainMenuViewController : MonoBehaviour
         _creditsViewController = Instantiate(_CreditsViewPrefab);
     }
 
-    public void OpenHowToPlay()
-    {
+    /// <summary>
+    /// Opens the "How to Play" view if it is not already open.
+    /// </summary>
+    public void OpenHowToPlay() {
+        // Check if the "HowToPlay" view is already instantiated.
         if (_HowToPlayViewController) return;
+
+        // Instantiate the "HowToPlay" view if it is not already open.
         _HowToPlayViewController = Instantiate(_HowToPlayViewPrefab);
     }
 }

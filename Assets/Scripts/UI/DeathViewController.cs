@@ -13,14 +13,18 @@ public class DeathViewController : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI _PointsValue; // The UI element that displays the points value.
 
-    private void Start()
-    {
-        // Set text for points display.
+    /// <summary>
+    /// Initializes the game state upon start, including setting the points display and pausing the game.
+    /// </summary>
+    private void Start() {
+        // Set text for the points display based on the current points from GameMaster.
         _Points = GameMaster.Instance.getPoints();
         _PointsValue.SetText(_Points.ToString());
 
         // Pause the game upon death.
         GameMaster.Instance.setPause(true);
+
+        // Stop the game's background music.
         AudioSystem.Instance.StopMusic();
     }
 
