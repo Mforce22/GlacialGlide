@@ -721,6 +721,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1729128224, guid: 1016955512d60af45a1e5993eeffea65, type: 3}
+      propertyPath: _JumpStart
+      value: 
+      objectReference: {fileID: 11400000, guid: ce3a6bda41ce8e94f95e1a861bbb8d61, type: 2}
+    - target: {fileID: 1729128224, guid: 1016955512d60af45a1e5993eeffea65, type: 3}
+      propertyPath: _JumpFailed
+      value: 
+      objectReference: {fileID: 11400000, guid: 54081b4457777b14a910c394e03086d0, type: 2}
+    - target: {fileID: 1729128224, guid: 1016955512d60af45a1e5993eeffea65, type: 3}
+      propertyPath: _PauseEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 5b839b021bf7c9f49b777b80ddc80b95, type: 2}
+    - target: {fileID: 1729128224, guid: 1016955512d60af45a1e5993eeffea65, type: 3}
+      propertyPath: _JumpCompleted
+      value: 
+      objectReference: {fileID: 11400000, guid: 02dc2645433ea654ca13bd626eaa895e, type: 2}
     - target: {fileID: 1729128225, guid: 1016955512d60af45a1e5993eeffea65, type: 3}
       propertyPath: _Animator
       value: 
